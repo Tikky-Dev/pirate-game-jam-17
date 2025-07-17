@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="pirate-game-jam-17"
-run/main_scene="res://Scenes/StartAnimation.tscn"
+run/main_scene="uid://kxahp8kg2487"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://Sprites/icon.svg"
 
