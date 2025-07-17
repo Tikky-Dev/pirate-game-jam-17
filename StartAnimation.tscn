@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://kxahp8kg2487"]
+
+[ext_resource type="VideoStream" uid="uid://b87mcdq38bh4n" path="res://0716_2_.ogv" id="1_hltuw"]
+[ext_resource type="Script" uid="uid://hl7xmfl4366v" path="res://start_animation.gd" id="2_57474"]
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer"]
+offset_right = 40.0
+offset_bottom = 41.0
+stream = ExtResource("1_hltuw")
+autoplay = true
+script = ExtResource("2_57474")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(960, 540)
+zoom = Vector2(0.6, 0.6)
+
+[connection signal="finished" from="." to="." method="_on_finished"]
