@@ -1,0 +1,50 @@
+[gd_scene load_steps=8 format=3 uid="uid://toqi11jj8cxx"]
+
+[ext_resource type="Script" uid="uid://dm8wwsg0ws5h6" path="res://big_locker.gd" id="1_jeuna"]
+[ext_resource type="Texture2D" uid="uid://bqr3m2dgs6782" path="res://Placeholder Sprites/BigLocker.png" id="2_5sh4t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eu4e0"]
+size = Vector2(40, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d2t2d"]
+atlas = ExtResource("2_5sh4t")
+region = Rect2(0, 0, 32, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_obn8r"]
+atlas = ExtResource("2_5sh4t")
+region = Rect2(48, 0, 32, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ppen"]
+atlas = ExtResource("2_5sh4t")
+region = Rect2(96, 0, 32, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hbeu6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d2t2d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_obn8r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ppen")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Big Locker" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_jeuna")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_eu4e0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_hbeu6")
+frame_progress = 0.0817208
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

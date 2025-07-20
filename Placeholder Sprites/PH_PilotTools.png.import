@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bht8fkxq83wm"
-path="res://.godot/imported/Silly_Placeholders.png-721299a13fc4f0be7712a84734ba65d2.ctex"
+uid="uid://umf6ljj52hmt"
+path="res://.godot/imported/PH_PilotTools.png-275b1f5e86461904db6a431923561ebc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Placeholder Sprites/Silly_Placeholders.png"
-dest_files=["res://.godot/imported/Silly_Placeholders.png-721299a13fc4f0be7712a84734ba65d2.ctex"]
+source_file="res://Placeholder Sprites/PH_PilotTools.png"
+dest_files=["res://.godot/imported/PH_PilotTools.png-275b1f5e86461904db6a431923561ebc.ctex"]
 
 [params]
 

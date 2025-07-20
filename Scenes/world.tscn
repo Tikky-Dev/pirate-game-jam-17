@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://plspv66syaoo"]
+
+[ext_resource type="Texture2D" uid="uid://ds71qhskojqr7" path="res://Placeholder Sprites/BridgeRoom-Addendum.png" id="1_a02cp"]
+[ext_resource type="PackedScene" uid="uid://rwyxdoekdp77" path="res://Scenes/player.tscn" id="2_go701"]
+[ext_resource type="PackedScene" uid="uid://toqi11jj8cxx" path="res://Scenes/big_locker.tscn" id="3_5a7ea"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_go701"]
+size = Vector2(231, 4.75)
+
+[node name="World" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_a02cp")
+region_enabled = true
+region_rect = Rect2(0, 0, 230.417, 155)
+
+[node name="Player" parent="." instance=ExtResource("2_go701")]
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-1, 76)
+shape = SubResource("RectangleShape2D_go701")
+
+[node name="Big Locker" parent="." instance=ExtResource("3_5a7ea")]
+position = Vector2(-81, 34)
+
+[node name="Big Locker2" parent="." instance=ExtResource("3_5a7ea")]
+position = Vector2(66, 34)
