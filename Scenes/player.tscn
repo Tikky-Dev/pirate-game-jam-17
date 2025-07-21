@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://rwyxdoekdp77"]
 
-[ext_resource type="Script" uid="uid://dc5eod6x1maxm" path="res://player.gd" id="1_cvnsp"]
+[ext_resource type="Script" uid="uid://dc5eod6x1maxm" path="res://Scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://dgf1acbjligp8" path="res://Placeholder Sprites/PH_PilotWalk.png" id="2_6t5aa"]
 [ext_resource type="Texture2D" uid="uid://umf6ljj52hmt" path="res://Placeholder Sprites/PH_PilotTools.png" id="2_vgqql"]
 
@@ -81,5 +81,5 @@ animation = &"Walking"
 frame_progress = 0.970664
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-2, 9)
+position = Vector2(-1, 9)
 shape = SubResource("CapsuleShape2D_gymyn")

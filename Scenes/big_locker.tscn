@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://toqi11jj8cxx"]
 
-[ext_resource type="Script" uid="uid://dm8wwsg0ws5h6" path="res://big_locker.gd" id="1_jeuna"]
+[ext_resource type="Script" uid="uid://dm8wwsg0ws5h6" path="res://Scripts/big_locker.gd" id="1_jeuna"]
 [ext_resource type="Texture2D" uid="uid://bqr3m2dgs6782" path="res://Placeholder Sprites/BigLocker.png" id="2_5sh4t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eu4e0"]
