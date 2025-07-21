@@ -2,13 +2,21 @@ extends Area2D
 
 var can_interact = false
 var is_open = false
+var is_hidden = false
 
 # Called when the node enters the scene tree for the first time.
 func _input(event: InputEvent) -> void:
 	if can_interact:
 		if event.is_action_pressed("Interact"):
 			if is_open:
-				print("Hidden")
+				if is_hidden:
+					print("Shown")
+					$AnimatedSprite2D.frame = 1
+					is_hidden = false
+				elif not is_hidden:
+					print("Hidden")
+					$AnimatedSprite2D.frame = 2
+					is_hidden = true
 			elif not is_open:
 				var selection = randf()
 				print(selection)
@@ -21,6 +29,7 @@ func _input(event: InputEvent) -> void:
 				elif selection < 1:
 					GlobalVar.metal += 1
 					print("Metal" + str(GlobalVar.metal))
+				$AnimatedSprite2D.frame = 1
 				is_open = true
 
 func _on_body_entered(body: Node2D) -> void:
