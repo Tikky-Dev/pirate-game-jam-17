@@ -1,9 +1,16 @@
 extends CharacterBody2D
 
 
-const SPEED = 100.0
-const JUMP_VELOCITY = -200.0
+var SPEED = 100.0
+var JUMP_VELOCITY = -200.0
 var is_walking := false
+var has_hg := false #hg = handgun
+var has_lg := false #lg = lasergun
+var has_pg := false #pg = plasmagun
+var using_flashlight := true
+var using_hg := false
+var using_lg := false
+var using_pg := false
 
 func _physics_process(delta: float) -> void:
 	
@@ -58,3 +65,46 @@ func _physics_process(delta: float) -> void:
 		is_walking = false
 		
 	move_and_slide()
+	
+
+func _input(event: InputEvent) -> void:
+	if GlobalVar.has_tool == true:
+		using_flashlight = false
+		using_hg = false
+		using_lg = false
+		using_pg = false
+		SPEED = 50
+		JUMP_VELOCITY = -100
+		$ArmPosition/ArmPivot/ArmSprite.frame = 4
+		$Sprite2D.visible = true
+	else:
+		SPEED = 100
+		JUMP_VELOCITY = -200
+		$Sprite2D.visible = false
+		if event.is_action_pressed("Handgun"):
+			if has_hg:
+				using_flashlight = false
+				using_hg = true
+				using_lg = false
+				using_pg = false
+				$ArmPosition/ArmPivot/ArmSprite.frame = 1
+		elif event.is_action_pressed("Lasergun"):
+			if has_lg:
+				using_flashlight = false
+				using_hg = false
+				using_lg = true
+				using_pg = false
+				$ArmPosition/ArmPivot/ArmSprite.frame = 2
+		elif event.is_action_pressed("Plasmagun"):
+			if has_pg:
+				using_flashlight = false
+				using_hg = false
+				using_lg = false
+				using_pg = true
+				$ArmPosition/ArmPivot/ArmSprite.frame = 3
+		elif event.is_action_pressed("Flashlight"):
+			using_flashlight = true
+			using_hg = false
+			using_lg = false
+			using_pg = false
+			$ArmPosition/ArmPivot/ArmSprite.frame = 0

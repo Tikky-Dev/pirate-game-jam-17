@@ -71,32 +71,29 @@ animations = [{
 radius = 8.0
 height = 72.0
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6t5aa"]
-atlas = ExtResource("2_vgqql")
-region = Rect2(32, 0, 27, 16)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_gymyn"]
 atlas = ExtResource("2_vgqql")
-region = Rect2(32, 16, 27, 16)
+region = Rect2(32, 64, 32, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pu2lt"]
 atlas = ExtResource("2_vgqql")
-region = Rect2(32, 32, 27, 16)
+region = Rect2(32, 48, 32, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ukyrk"]
 atlas = ExtResource("2_vgqql")
-region = Rect2(32, 48, 27, 16)
+region = Rect2(32, 32, 32, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7dp3o"]
 atlas = ExtResource("2_vgqql")
-region = Rect2(32, 64, 27, 16)
+region = Rect2(32, 16, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h4iuc"]
+atlas = ExtResource("2_vgqql")
+region = Rect2(32, 0, 32, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_h4iuc"]
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6t5aa")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_gymyn")
 }, {
@@ -108,6 +105,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_7dp3o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h4iuc")
 }],
 "loop": true,
 "name": &"default",
@@ -123,6 +123,14 @@ script = ExtResource("1_cvnsp")
 sprite_frames = SubResource("SpriteFrames_tx1dd")
 animation = &"Idle"
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+z_index = -5
+position = Vector2(-9, 0)
+texture = ExtResource("2_vgqql")
+region_enabled = true
+region_rect = Rect2(73, 21, 16, 36)
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 9)
 shape = SubResource("CapsuleShape2D_gymyn")
@@ -137,5 +145,3 @@ script = ExtResource("4_vgqql")
 [node name="ArmSprite" type="AnimatedSprite2D" parent="ArmPosition/ArmPivot"]
 position = Vector2(12, 1)
 sprite_frames = SubResource("SpriteFrames_h4iuc")
-frame = 4
-frame_progress = 0.533901
