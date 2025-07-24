@@ -36,6 +36,8 @@ func _physics_process(delta: float) -> void:
 			$ArmPosition.position.x=0
 			$ArmPosition.position.y=8
 		$AnimatedSprite2D.flip_h = false
+		$Sprite2D.flip_h = false
+		$Sprite2D.position = Vector2(-9, 0)
 		$ArmPosition.scale.x=1
 	elif direction < 0:
 		if is_walking == true:
@@ -46,6 +48,8 @@ func _physics_process(delta: float) -> void:
 			$ArmPosition.position.x=0
 			$ArmPosition.position.y=7
 		$AnimatedSprite2D.flip_h = true
+		$Sprite2D.flip_h = true
+		$Sprite2D.position = Vector2(11, 0)
 		$ArmPosition.scale.x=-1
 		
 	
@@ -65,18 +69,29 @@ func _physics_process(delta: float) -> void:
 		is_walking = false
 		
 	move_and_slide()
+	GlobalVar.player_position = $".".global_position
 	
 
 func _input(event: InputEvent) -> void:
 	if GlobalVar.has_tool == true:
-		using_flashlight = false
-		using_hg = false
-		using_lg = false
-		using_pg = false
-		SPEED = 50
-		JUMP_VELOCITY = -100
-		$ArmPosition/ArmPivot/ArmSprite.frame = 4
-		$Sprite2D.visible = true
+		if event.is_action_pressed("Interact"):
+			using_flashlight = false
+			using_hg = false
+			using_lg = false
+			using_pg = false
+			SPEED = 50
+			JUMP_VELOCITY = -100
+			$ArmPosition/ArmPivot/ArmSprite.frame = 4
+			$Sprite2D.visible = true
+		elif event.is_action_pressed("Drop"):
+			using_flashlight = true
+			using_hg = false
+			using_lg = false
+			using_pg = false
+			SPEED = 100
+			JUMP_VELOCITY = -200
+			$ArmPosition/ArmPivot/ArmSprite.frame = 0
+			$Sprite2D.visible = false
 	else:
 		SPEED = 100
 		JUMP_VELOCITY = -200
