@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://rwyxdoekdp77"]
+[gd_scene load_steps=22 format=3 uid="uid://rwyxdoekdp77"]
 
 [ext_resource type="Script" uid="uid://dc5eod6x1maxm" path="res://Scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://dgf1acbjligp8" path="res://Placeholder Sprites/PH_PilotWalk.png" id="2_6t5aa"]
@@ -114,6 +114,11 @@ animations = [{
 "speed": 1.0
 }]
 
+[sub_resource type="Gradient" id="Gradient_vgqql"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_fkybt"]
+gradient = SubResource("Gradient_vgqql")
+
 [node name="Player" type="CharacterBody2D"]
 z_index = 15
 collision_layer = 2
@@ -145,3 +150,9 @@ script = ExtResource("4_vgqql")
 [node name="ArmSprite" type="AnimatedSprite2D" parent="ArmPosition/ArmPivot"]
 position = Vector2(12, 1)
 sprite_frames = SubResource("SpriteFrames_h4iuc")
+
+[node name="Flashlight Light" type="PointLight2D" parent="ArmPosition/ArmPivot"]
+position = Vector2(75.84, 0)
+scale = Vector2(0.459961, 38.25)
+energy = 6.94
+texture = SubResource("GradientTexture1D_fkybt")

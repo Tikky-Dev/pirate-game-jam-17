@@ -16,6 +16,8 @@ func _input(event: InputEvent) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	can_interact = true
+	print(can_interact)
 
 func _on_body_exited(body: Node2D) -> void:
 	can_interact = false
+	print("HELLO")
