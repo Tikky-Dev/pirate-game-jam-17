@@ -59,6 +59,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Generator 1" type="RichTextLabel" parent="TEXT"]
+layout_mode = 0
 offset_left = -388.0
 offset_top = -105.0
 offset_right = -275.0
@@ -66,6 +67,7 @@ offset_bottom = -65.0
 text = "GENERATOR 1"
 
 [node name="Elevator" type="RichTextLabel" parent="TEXT"]
+layout_mode = 0
 offset_left = -649.0
 offset_top = -92.0
 offset_right = -579.0
