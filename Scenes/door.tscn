@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://k6gtklavw1mv"]
+[gd_scene load_steps=8 format=3 uid="uid://k6gtklavw1mv"]
 
 [ext_resource type="Script" uid="uid://ciiodb1uml0st" path="res://Scripts/door.gd" id="1_p0e35"]
 [ext_resource type="Texture2D" uid="uid://bcbcwbpsmaibn" path="res://Placeholder Sprites/door_frame.png" id="2_fahql"]
+[ext_resource type="AudioStream" uid="uid://cveyrp6wk20as" path="res://audio/lockerSound.wav" id="3_fahql"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ab4ky"]
 size = Vector2(30, 98)
@@ -51,6 +52,10 @@ occluder = SubResource("OccluderPolygon2D_p0e35")
 
 [node name="DoorOccluder" type="LightOccluder2D" parent="."]
 occluder = SubResource("OccluderPolygon2D_fahql")
+
+[node name="DoorSoundPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_fahql")
+volume_db = 24.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
