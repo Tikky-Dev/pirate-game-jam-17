@@ -13,8 +13,15 @@ func _input(event: InputEvent) -> void:
 					print("Shown")
 					$AnimatedSprite2D.frame = 1
 					is_hidden = false
+					$"../Player".visible=true
+					$"../Player".canMove=true
+					$HideLight.visible=false
 				elif not is_hidden:
 					print("Hidden")
+					$"../Player".visible=false
+					$"../Player".canMove=false
+					$HideLight.visible=true
+					
 					$AnimatedSprite2D.frame = 2
 					is_hidden = true
 			elif not is_open:

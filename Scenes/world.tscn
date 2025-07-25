@@ -13,13 +13,14 @@ colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 gradient = SubResource("Gradient_fo5ed")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_go701"]
 size = Vector2(231, 4.75)
 
 [node name="World" type="Node2D"]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="BridgeSprite" type="Sprite2D" parent="."]
 texture = ExtResource("1_a02cp")
 region_enabled = true
 region_rect = Rect2(0, 0, 230.417, 155)
@@ -44,10 +45,10 @@ shape = SubResource("RectangleShape2D_go701")
 position = Vector2(-51, 34)
 
 [node name="Big Locker2" parent="." instance=ExtResource("3_5a7ea")]
-position = Vector2(66, 34)
+position = Vector2(-190, 34)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0, 0, 0, 1)
+color = Color(0.169245, 0.169245, 0.169245, 1)
 
 [node name="Tool" parent="." instance=ExtResource("5_fo5ed")]
 position = Vector2(3, 56)

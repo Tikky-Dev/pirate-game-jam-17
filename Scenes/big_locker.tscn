@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://toqi11jj8cxx"]
+[gd_scene load_steps=10 format=3 uid="uid://toqi11jj8cxx"]
 
 [ext_resource type="Script" uid="uid://dm8wwsg0ws5h6" path="res://Scripts/big_locker.gd" id="1_jeuna"]
 [ext_resource type="Texture2D" uid="uid://bqr3m2dgs6782" path="res://Placeholder Sprites/BigLocker.png" id="2_5sh4t"]
@@ -35,6 +35,15 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Gradient" id="Gradient_jeuna"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_5sh4t"]
+gradient = SubResource("Gradient_jeuna")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
 [node name="Big Locker" type="Area2D"]
 collision_mask = 2
 script = ExtResource("1_jeuna")
@@ -45,6 +54,11 @@ shape = SubResource("RectangleShape2D_eu4e0")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_hbeu6")
 frame_progress = 0.0817208
+
+[node name="HideLight" type="PointLight2D" parent="."]
+visible = false
+position = Vector2(0, -11)
+texture = SubResource("GradientTexture2D_5sh4t")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

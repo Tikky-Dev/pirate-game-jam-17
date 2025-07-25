@@ -1,9 +1,10 @@
-[gd_scene load_steps=22 format=3 uid="uid://rwyxdoekdp77"]
+[gd_scene load_steps=21 format=3 uid="uid://rwyxdoekdp77"]
 
 [ext_resource type="Script" uid="uid://dc5eod6x1maxm" path="res://Scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://dgf1acbjligp8" path="res://Placeholder Sprites/PH_PilotWalk.png" id="2_6t5aa"]
 [ext_resource type="Texture2D" uid="uid://umf6ljj52hmt" path="res://Placeholder Sprites/PH_PilotTools.png" id="2_vgqql"]
 [ext_resource type="Script" uid="uid://bsc1wtjulk8kn" path="res://Scripts/arm_pivot.gd" id="4_vgqql"]
+[ext_resource type="Texture2D" uid="uid://c77w078rjv2wh" path="res://Placeholder Sprites/flashlight.png" id="5_fkybt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tx1dd"]
 atlas = ExtResource("2_vgqql")
@@ -114,11 +115,6 @@ animations = [{
 "speed": 1.0
 }]
 
-[sub_resource type="Gradient" id="Gradient_vgqql"]
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_fkybt"]
-gradient = SubResource("Gradient_vgqql")
-
 [node name="Player" type="CharacterBody2D"]
 z_index = 15
 collision_layer = 2
@@ -151,8 +147,9 @@ script = ExtResource("4_vgqql")
 position = Vector2(12, 1)
 sprite_frames = SubResource("SpriteFrames_h4iuc")
 
-[node name="Flashlight Light" type="PointLight2D" parent="ArmPosition/ArmPivot"]
-position = Vector2(75.84, 0)
-scale = Vector2(0.459961, 38.25)
-energy = 6.94
-texture = SubResource("GradientTexture1D_fkybt")
+[node name="PointLight2D" type="PointLight2D" parent="ArmPosition/ArmPivot"]
+position = Vector2(6.993, 3.791)
+rotation = 1.5708
+scale = Vector2(0.085, 0.171306)
+shadow_enabled = true
+texture = ExtResource("5_fkybt")

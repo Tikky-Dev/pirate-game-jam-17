@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://k6gtklavw1mv"]
+[gd_scene load_steps=7 format=3 uid="uid://k6gtklavw1mv"]
 
 [ext_resource type="Script" uid="uid://ciiodb1uml0st" path="res://Scripts/door.gd" id="1_p0e35"]
 [ext_resource type="Texture2D" uid="uid://bcbcwbpsmaibn" path="res://Placeholder Sprites/door_frame.png" id="2_fahql"]
@@ -8,6 +8,12 @@ size = Vector2(30, 98)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a43ba"]
 size = Vector2(13, 98)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_p0e35"]
+polygon = PackedVector2Array(-7, -88, -7, -10, 6, -10, 6, -88)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_fahql"]
+polygon = PackedVector2Array(-5, -10, -5, 88, 5, 88, 5, -10)
 
 [node name="Door" type="Area2D"]
 collision_mask = 2
@@ -39,6 +45,12 @@ shape = SubResource("RectangleShape2D_ab4ky")
 [node name="ToggleCollision" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(0, 39)
 shape = SubResource("RectangleShape2D_a43ba")
+
+[node name="DoorFrameOccluder" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_p0e35")
+
+[node name="DoorOccluder" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_fahql")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
