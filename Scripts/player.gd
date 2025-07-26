@@ -97,6 +97,7 @@ func _input(event: InputEvent) -> void:
 			JUMP_VELOCITY = -200
 			$ArmPosition/ArmPivot/ArmSprite.frame = 0
 			$Sprite2D.visible = false
+			GlobalVar.has_tool = false
 	else:
 		SPEED = 100
 		JUMP_VELOCITY = -200
