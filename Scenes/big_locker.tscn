@@ -60,5 +60,14 @@ visible = false
 position = Vector2(0, -11)
 texture = SubResource("GradientTexture2D_5sh4t")
 
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_left = -37.0
+offset_top = -56.0
+offset_right = 40.0
+offset_bottom = -42.0
+theme_override_font_sizes/font_size = 10
+text = "Click to use tool"
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

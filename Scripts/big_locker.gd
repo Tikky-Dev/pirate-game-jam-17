@@ -23,6 +23,7 @@ func _input(event: InputEvent) -> void:
 					$HideLight.visible=true
 					
 					$AnimatedSprite2D.frame = 2
+					$Label.visible = false
 					is_hidden = true
 			elif not is_open:
 				var selection = randf()
@@ -38,9 +39,18 @@ func _input(event: InputEvent) -> void:
 					print("Metal" + str(GlobalVar.metal))
 				$AnimatedSprite2D.frame = 1
 				is_open = true
+		if event.is_action_pressed("useTool"):
+			if GlobalVar.has_tool:
+				if is_open:
+					GlobalVar.scraps += 4
+					$".".visible = false
+					$CollisionShape2D.disabled = true
 
 func _on_body_entered(body: Node2D) -> void:
 	can_interact = true
+	if is_open and GlobalVar.has_tool:
+		$Label.visible = true
 
 func _on_body_exited(body: Node2D) -> void:
 	can_interact = false
+	$Label.visible = false
