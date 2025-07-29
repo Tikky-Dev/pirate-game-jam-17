@@ -63,11 +63,11 @@ func _physics_process(delta: float) -> void:
 		else:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 			if $ArmPosition.scale.x==1:
-				$ArmPosition.position.x=-9
-				$ArmPosition.position.y=1
+				$ArmPosition.position.x=0
+				$ArmPosition.position.y=8
 			elif $ArmPosition.scale.x==-1:
-				$ArmPosition.position.x=9
-				$ArmPosition.position.y=1
+				$ArmPosition.position.x=0
+				$ArmPosition.position.y=8
 			
 			
 			$AnimatedSprite2D.play("Idle")
