@@ -7,6 +7,7 @@ var can_interact = false
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("Drop"):
 		$Sprite2D.show()
+		$PointLight2D.show()
 		$CollisionShape2D.disabled = false
 		position.x=$"../Player".position.x
 	if can_interact:
@@ -14,6 +15,7 @@ func _input(event: InputEvent) -> void:
 			GlobalVar.has_tool = true
 			$Sprite2D.hide()
 			$CollisionShape2D.disabled = true
+			$PointLight2D.hide()
 
 func _on_body_entered(body: Node2D) -> void:
 	can_interact = true

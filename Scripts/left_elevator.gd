@@ -7,9 +7,13 @@ func _input(event: InputEvent) -> void:
 	if can_interact:
 		if GlobalVar.leftElevatorRepaired:
 			if event.is_action_pressed("upElevator"):
-				print("Moved Up")
+				if $"../Player".global_position.y > -105:
+					print("Moved Up")
+					$"../Player".global_position.y -= 180
 			if event.is_action_pressed("downElevator"):
-				print("Moved Down")
+				if $"../Player".global_position.y < 76:
+					print("Moved Down")
+					$"../Player".global_position.y += 180
 		elif GlobalVar.leftElevatorRepaired == false:
 			if GlobalVar.has_tool:
 				if event.is_action_pressed("Interact"):
@@ -22,8 +26,10 @@ func _on_body_entered(body: Node2D) -> void:
 	can_interact = true
 	$Up.visible = true
 	$Down.visible = true
+	$PointLight2D.visible = true
 
 func _on_body_exited(body: Node2D) -> void:
 	can_interact = false
 	$Up.visible = false
 	$Down.visible = false
+	$PointLight2D.visible = false

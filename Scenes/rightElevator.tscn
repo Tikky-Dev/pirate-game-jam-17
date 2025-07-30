@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://cy8rvtpx8gvik"]
+[gd_scene load_steps=8 format=3 uid="uid://cy8rvtpx8gvik"]
 
 [ext_resource type="Script" uid="uid://dp46jiiex7rby" path="res://area_2d.gd" id="1_cyba6"]
 [ext_resource type="Texture2D" uid="uid://cqf66ixvky68v" path="res://Sprites/Elevators.png" id="2_7i85y"]
@@ -6,10 +6,19 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7i85y"]
 size = Vector2(134.71, 176.065)
 
-[sub_resource type="Gradient" id="Gradient_fo5ed"]
+[sub_resource type="Gradient" id="Gradient_4y0mv"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_7i85y"]
+gradient = SubResource("Gradient_4y0mv")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
+[sub_resource type="Gradient" id="Gradient_fo5ed"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_4y0mv"]
 gradient = SubResource("Gradient_fo5ed")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
@@ -54,6 +63,12 @@ z_index = -1
 texture = ExtResource("2_7i85y")
 region_enabled = true
 region_rect = Rect2(1, 1, 140, 180)
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+visible = false
+position = Vector2(1, -14)
+texture = SubResource("GradientTexture2D_4y0mv")
+texture_scale = 0.5
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

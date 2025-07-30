@@ -31,10 +31,10 @@ func _input(event: InputEvent) -> void:
 				if selection < .5:
 					GlobalVar.scraps += 1
 					print("Scraps" + str(GlobalVar.scraps))
-				elif selection < .75:
+				if (selection > .5 and selection < .75):
 					GlobalVar.organics += 1
 					print("Organics" + str(GlobalVar.organics))
-				elif selection < 1:
+				if (selection > .75 and selection < 1):
 					GlobalVar.metal += 1
 					print("Metal" + str(GlobalVar.metal))
 				$AnimatedSprite2D.frame = 1
@@ -42,7 +42,7 @@ func _input(event: InputEvent) -> void:
 		if event.is_action_pressed("useTool"):
 			if GlobalVar.has_tool:
 				if is_open:
-					GlobalVar.scraps += 4
+					GlobalVar.scraps += 2
 					$".".visible = false
 					$CollisionShape2D.disabled = true
 
