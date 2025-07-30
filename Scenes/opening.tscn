@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://cx3r0kdo74j0a"]
+
+[ext_resource type="Script" uid="uid://dacholgkpb5dc" path="res://Scenes/opening.gd" id="1_7ynk8"]
+
+[node name="Opening" type="Node2D"]
+script = ExtResource("1_7ynk8")
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 1151.0
+offset_bottom = 648.0
+theme_override_font_sizes/font_size = 32
+text = "You are the pilot of a ship
+The ship has sustained major damage
+Go to the maintenance room at the end of your floor
+Grab the tool
+Click to use it to scrap the lockers you open around the ship
+Interact with E
+Use the recycler in the maintenance room to turn scraps into metal
+Repair the elevators and find the engine
+Repair the engine and return to the bridge to win
+Explore, scrap, repair
+Good Luck
+
+Press enter to continue..."
+horizontal_alignment = 1
+vertical_alignment = 1

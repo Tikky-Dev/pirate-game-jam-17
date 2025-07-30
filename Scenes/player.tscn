@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://rwyxdoekdp77"]
+[gd_scene load_steps=53 format=3 uid="uid://rwyxdoekdp77"]
 
 [ext_resource type="Script" uid="uid://dc5eod6x1maxm" path="res://Scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://umf6ljj52hmt" path="res://Placeholder Sprites/PH_PilotTools.png" id="2_vgqql"]
@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://bsc1wtjulk8kn" path="res://Scripts/arm_pivot.gd" id="4_vgqql"]
 [ext_resource type="Texture2D" uid="uid://80j0g2iph27g" path="res://Sprites/PH_PilotTools-export.png" id="5_3smsa"]
 [ext_resource type="Texture2D" uid="uid://c77w078rjv2wh" path="res://Placeholder Sprites/flashlight.png" id="5_fkybt"]
-[ext_resource type="AudioStream" uid="uid://c55p5mbi50i7a" path="res://audio/Step - SFX.wav" id="7_3smsa"]
+[ext_resource type="AudioStream" uid="uid://cfci6j3h33q8h" path="res://audio/Step_20ms.wav" id="7_3smsa"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8erm5"]
 atlas = ExtResource("2_x3wgy")
@@ -312,17 +312,9 @@ height = 72.0
 atlas = ExtResource("5_3smsa")
 region = Rect2(32, 64, 32, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_8eeqe"]
-atlas = ExtResource("5_3smsa")
-region = Rect2(32, 48, 32, 16)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_5x828"]
 atlas = ExtResource("5_3smsa")
 region = Rect2(32, 32, 32, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_c1k8q"]
-atlas = ExtResource("5_3smsa")
-region = Rect2(32, 16, 32, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e6mvm"]
 atlas = ExtResource("5_3smsa")
@@ -335,13 +327,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_3vlem")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_8eeqe")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_5x828")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_c1k8q")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_e6mvm")

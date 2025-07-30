@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dqijwnd5t3urf"]
+[gd_scene load_steps=3 format=3 uid="uid://dqijwnd5t3urf"]
 
 [ext_resource type="Script" uid="uid://c4i61v7i1mft2" path="res://Scripts/menu.gd" id="1_3kf3n"]
+[ext_resource type="AudioStream" uid="uid://belh8mi5qhf0r" path="res://audio/Lost in the Hull - Dark Ambient (Stripped).wav" id="2_6pedr"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_3kf3n")
@@ -23,5 +24,9 @@ text = "Play"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(576, 324)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_6pedr")
+autoplay = true
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

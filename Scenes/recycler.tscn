@@ -1,16 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://bl4jljdjgd4q4"]
+[gd_scene load_steps=3 format=3 uid="uid://doxqtn7hjlw2w"]
 
-[ext_resource type="Script" uid="uid://dsamaock20px" path="res://recycler.gd" id="1_nt5f6"]
+[ext_resource type="Script" uid="uid://bqj1hx7wkvle" path="res://recycler.gd" id="1_nt5f6"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xlg6u"]
-size = Vector2(173, 85)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nt5f6"]
+size = Vector2(169, 86)
 
 [node name="Recycler" type="Area2D"]
+collision_mask = 2
 script = ExtResource("1_nt5f6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1.5, 0.5)
-shape = SubResource("RectangleShape2D_xlg6u")
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_nt5f6")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://184prrefkp3o"
+path="res://.godot/imported/Destiny Calls - Fanfare.wav-88e39ebf831ff7c39327f9c2fc865027.sample"
+
+[deps]
+
+source_file="res://audio/Destiny Calls - Fanfare.wav"
+dest_files=["res://.godot/imported/Destiny Calls - Fanfare.wav-88e39ebf831ff7c39327f9c2fc865027.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

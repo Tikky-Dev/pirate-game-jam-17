@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" uid="uid://c7qivqj8y3ulr" path="res://Scenes/hud.gd" id="1_e0onf"]
 
-[sub_resource type="Gradient" id="Gradient_hgpy0"]
+[sub_resource type="Gradient" id="Gradient_e0onf"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_3gfia"]
-gradient = SubResource("Gradient_hgpy0")
+gradient = SubResource("Gradient_e0onf")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0, 0)
@@ -15,8 +15,8 @@ fill_to = Vector2(0, 0)
 layout_mode = 3
 anchor_right = 0.064
 anchor_bottom = 0.117
-offset_right = 0.271996
-offset_bottom = 0.183998
+offset_right = 1.272
+offset_bottom = 4.184
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_e0onf")
@@ -35,12 +35,14 @@ offset_bottom = 41.0
 text = "Scraps:"
 
 [node name="Metal" type="Label" parent="."]
+layout_mode = 0
 offset_top = 36.0
 offset_right = 49.0
 offset_bottom = 59.0
 text = "Metal:"
 
 [node name="Organics" type="Label" parent="."]
+layout_mode = 0
 offset_top = 54.0
 offset_right = 69.0
 offset_bottom = 77.0
@@ -50,3 +52,24 @@ text = "Organics:"
 position = Vector2(38.5, 37)
 scale = Vector2(2.01563, 1.875)
 texture = SubResource("GradientTexture2D_3gfia")
+
+[node name="Broken" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 486.0
+offset_top = 257.0
+offset_right = 654.0
+offset_bottom = 280.0
+text = "It seems to be broken"
+
+[node name="PointLight2D" type="PointLight2D" parent="Broken"]
+visible = false
+position = Vector2(100.5, 14)
+scale = Vector2(3.42188, 2.03125)
+texture = SubResource("GradientTexture2D_3gfia")
+texture_scale = 1.5
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,3 +1,18 @@
-[gd_scene format=3 uid="uid://udpob7envfn6"]
+[gd_scene load_steps=2 format=3 uid="uid://udpob7envfn6"]
+
+[ext_resource type="Script" uid="uid://bujb0n75kas7h" path="res://Scenes/ending.gd" id="1_5jm55"]
 
 [node name="Ending" type="Node2D"]
+script = ExtResource("1_5jm55")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 2.0
+offset_right = 1156.0
+offset_bottom = 646.0
+theme_override_font_sizes/font_size = 32
+text = "Congratulations
+You Beat the game
+
+Press Enter to return to the main menu..."
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bg16w5fko5ktr"
+path="res://.godot/imported/Ship Destruction - SFX.wav-fa722816ded25bd5c13e754a95d2aa26.sample"
+
+[deps]
+
+source_file="res://audio/Ship Destruction - SFX.wav"
+dest_files=["res://.godot/imported/Ship Destruction - SFX.wav-fa722816ded25bd5c13e754a95d2aa26.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

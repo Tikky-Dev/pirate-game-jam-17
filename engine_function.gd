@@ -4,9 +4,11 @@ var can_interact = false
 
 func _input(event: InputEvent) -> void:
 	if can_interact:
-		if (GlobalVar.has_tool == true and GlobalVar.metal == 20):
-			if event.is_action_pressed("Interact"):
+		if event.is_action_pressed("Interact"):
+			if (GlobalVar.has_tool == true and GlobalVar.metal >= 20):
 				GlobalVar.engineRepaired = true
+				GlobalVar.metal -= 20
+				print("engine")
 
 func _on_body_entered(body: Node2D) -> void:
 	can_interact = true

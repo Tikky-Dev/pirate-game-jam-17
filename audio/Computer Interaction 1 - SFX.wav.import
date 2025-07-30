@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://crf5de0ucm66j"
+path="res://.godot/imported/Computer Interaction 1 - SFX.wav-1db1bc6cdadf2e3628eaad028e6eaec9.sample"
+
+[deps]
+
+source_file="res://audio/Computer Interaction 1 - SFX.wav"
+dest_files=["res://.godot/imported/Computer Interaction 1 - SFX.wav-1db1bc6cdadf2e3628eaad028e6eaec9.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
