@@ -2,18 +2,21 @@ extends Area2D
 
 var can_interact = false
 
+# Called when the node enters the scene tree for the first time.
 func _input(event: InputEvent) -> void:
 	if can_interact:
-		if GlobalVar.rightElevatorRepaired:
+		if GlobalVar.leftElevatorRepaired:
 			if event.is_action_pressed("upElevator"):
 				print("Moved Up")
 			if event.is_action_pressed("downElevator"):
 				print("Moved Down")
-		elif GlobalVar.rightElevatorRepaired == false:
+		elif GlobalVar.leftElevatorRepaired == false:
 			if GlobalVar.has_tool:
 				if event.is_action_pressed("Interact"):
-					GlobalVar.rightElevatorRepaired = true
+					GlobalVar.leftElevatorRepaired = true
 					GlobalVar.metal -= 2
+
+
 
 func _on_body_entered(body: Node2D) -> void:
 	can_interact = true

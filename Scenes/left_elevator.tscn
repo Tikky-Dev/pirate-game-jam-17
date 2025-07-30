@@ -1,0 +1,59 @@
+[gd_scene load_steps=6 format=3 uid="uid://1heira058ok1"]
+
+[ext_resource type="Script" uid="uid://lth4qv2xih4i" path="res://Scripts/left_elevator.gd" id="1_jdhbj"]
+[ext_resource type="Texture2D" uid="uid://cqf66ixvky68v" path="res://Sprites/Elevators.png" id="2_ai1kq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7i85y"]
+size = Vector2(134.71, 176.065)
+
+[sub_resource type="Gradient" id="Gradient_fo5ed"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_7i85y"]
+gradient = SubResource("Gradient_fo5ed")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
+[node name="leftElevator" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_jdhbj")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_7i85y")
+
+[node name="Up" type="Label" parent="."]
+visible = false
+offset_left = -4.0
+offset_top = -81.0
+offset_right = 5.0
+offset_bottom = -58.0
+text = "^"
+
+[node name="PointLight2D" type="PointLight2D" parent="Up"]
+position = Vector2(4, 11)
+texture = SubResource("GradientTexture2D_7i85y")
+texture_scale = 0.5
+
+[node name="Down" type="Label" parent="."]
+visible = false
+offset_left = 4.0
+offset_top = 87.0
+offset_right = 13.0
+offset_bottom = 110.0
+rotation = -3.14002
+text = "^"
+
+[node name="PointLight2D" type="PointLight2D" parent="Down"]
+position = Vector2(4.01572, 9.99369)
+texture = SubResource("GradientTexture2D_7i85y")
+texture_scale = 0.5
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1
+texture = ExtResource("2_ai1kq")
+region_enabled = true
+region_rect = Rect2(1, 1, 140, 180)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

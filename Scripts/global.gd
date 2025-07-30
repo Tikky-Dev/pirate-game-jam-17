@@ -7,3 +7,5 @@ var health = 2
 var oxygen = 20
 var has_tool := false
 var player_position = Vector2()
+var rightElevatorRepaired = false
+var leftElevatorRepaired = false
