@@ -2,7 +2,7 @@ extends Area2D
 
 var can_interact = false
 
-
+var hasNeverPickedUp=true
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("Drop"):
@@ -14,6 +14,8 @@ func _input(event: InputEvent) -> void:
 			position.y=$"../Player".position.y + 24
 	if can_interact:
 		if event.is_action_pressed("Interact"):
+			if hasNeverPickedUp:
+				$"../Monster".BeginTheMonster()
 			GlobalVar.has_tool = true
 			$Sprite2D.hide()
 			$CollisionShape2D.disabled = true

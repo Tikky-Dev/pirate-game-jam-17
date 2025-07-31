@@ -33,8 +33,3 @@ func BeginTheMonster() -> void:
 	$StateMachine/Chase.player=$"../Player"
 	canMove=true
 	$Timer.start()
-
-
-func _on_ready() -> void:
-	BeginTheMonster()
-	pass # Replace with function body.
