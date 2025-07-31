@@ -16,6 +16,11 @@ var health=3
 
 func _physics_process(delta: float) -> void:
 	
+	if health <=0:
+		if $AnimatedSprite2D.frame==12:
+			$AnimatedSprite2D.pause()
+		await get_tree().create_timer(0.5).timeout
+		get_tree().change_scene_to_file("res://Scenes/game_over.tscn")
 	
 	# Add the gravity.
 	if not is_on_floor():

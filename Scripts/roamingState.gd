@@ -59,13 +59,8 @@ func process_physics(delta: float) -> State:
 				monster.goRight()
 			elif monster.global_position.x > -800:
 				monster.goLeft()
-			else:
-				print("TRUE")
 			
-			if monster.global_position.x < -860 && monster.global_position.x > -800:
-				print("TRUE")
-				monster.position.x=-1162
-				monster.position.y=-98
+			
 			
 		if monster.floor == 2:
 			if monster.position.x - 10 < -1162:
@@ -109,7 +104,7 @@ func timerEvent() -> State:
 	#Moving Down
 	print(player.global_position.y, " ", monster.global_position.y+90)
 	if  player.global_position.y > monster.global_position.y+90:
-		if randChance < 1:
+		if randChance < 0.8:
 			monster.goToMonsterDoor=true
 			monster.goingUp=false
 			
