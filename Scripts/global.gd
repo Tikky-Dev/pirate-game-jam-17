@@ -12,3 +12,4 @@ var leftElevatorRepaired = false
 var engineRepaired = false
 var using_lg = false
 var has_lg = false
+var usedGun = false #once we add gun functionality, this will check if it's been used and make it unusable
