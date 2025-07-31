@@ -104,7 +104,7 @@ func timerEvent() -> State:
 	#Moving Down
 	print(player.global_position.y, " ", monster.global_position.y+90)
 	if  player.global_position.y > monster.global_position.y+90:
-		if randChance < 0.8:
+		if randChance < 0.2:
 			monster.goToMonsterDoor=true
 			monster.goingUp=false
 			
