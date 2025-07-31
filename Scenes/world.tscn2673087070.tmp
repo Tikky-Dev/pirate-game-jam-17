@@ -1,8 +1,8 @@
-[gd_scene load_steps=27 format=3 uid="uid://plspv66syaoo"]
+[gd_scene load_steps=26 format=3 uid="uid://plspv66syaoo"]
 
 [ext_resource type="Texture2D" uid="uid://ds71qhskojqr7" path="res://Placeholder Sprites/BridgeRoom-Addendum.png" id="1_a02cp"]
 [ext_resource type="PackedScene" uid="uid://rwyxdoekdp77" path="res://Scenes/player.tscn" id="2_go701"]
-[ext_resource type="PackedScene" uid="uid://doxqtn7hjlw2w" path="res://Scenes/recycler.tscn" id="2_hgpy0"]
+[ext_resource type="PackedScene" uid="uid://bl4jljdjgd4q4" path="res://Scenes/recycler.tscn" id="2_hgpy0"]
 [ext_resource type="PackedScene" uid="uid://toqi11jj8cxx" path="res://Scenes/big_locker.tscn" id="3_5a7ea"]
 [ext_resource type="PackedScene" uid="uid://k6gtklavw1mv" path="res://Scenes/door.tscn" id="4_8j60k"]
 [ext_resource type="PackedScene" uid="uid://dktnk010g2nwq" path="res://Scenes/tool.tscn" id="5_fo5ed"]
@@ -17,9 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://b1lta7r12domt" path="res://Sprites/MaintenanceRoom.png" id="13_e0ngr"]
 [ext_resource type="Texture2D" uid="uid://32q5k3rpcw0f" path="res://Sprites/EngineRoom.png" id="14_kn0ld"]
 [ext_resource type="PackedScene" uid="uid://tnouxmn34kmm" path="res://Scenes/engine_function.tscn" id="15_kn0ld"]
-[ext_resource type="PackedScene" uid="uid://cx5snp8v8thp5" path="res://Scenes/end_check.tscn" id="18_0pcbe"]
-[ext_resource type="Texture2D" uid="uid://ba1dlumrfcm7r" path="res://Placeholder Sprites/MonsterDoor.png" id="19_1cojt"]
-[ext_resource type="PackedScene" uid="uid://1kduh3qyqq2h" path="res://Scenes/monster.tscn" id="19_axeuq"]
+[ext_resource type="PackedScene" uid="uid://1kduh3qyqq2h" path="res://Scenes/monster.tscn" id="18_0pcbe"]
 
 [sub_resource type="Gradient" id="Gradient_t2t4p"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
@@ -29,6 +27,9 @@ gradient = SubResource("Gradient_t2t4p")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.5, 0)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_t2t4p"]
+light_mode = 1
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_go701"]
 size = Vector2(231, 4.75)
@@ -120,6 +121,9 @@ texture = ExtResource("6_5ukr8")
 region_enabled = true
 region_rect = Rect2(885, 0, 224, 180)
 
+[node name="Recycler" parent="Walls" instance=ExtResource("2_hgpy0")]
+position = Vector2(-2447, 31)
+
 [node name="BridgeSprite" type="Sprite2D" parent="."]
 texture = ExtResource("1_a02cp")
 region_enabled = true
@@ -134,6 +138,8 @@ texture = SubResource("GradientTexture2D_5ukr8")
 [node name="Camera2D" type="Camera2D" parent="Player"]
 
 [node name="HUD" parent="Player" instance=ExtResource("5_t2t4p")]
+z_index = 1
+material = SubResource("CanvasItemMaterial_t2t4p")
 offset_left = -561.0
 offset_top = -320.0
 offset_right = -560.728
@@ -233,6 +239,7 @@ texture = ExtResource("8_0fj1v")
 script = ExtResource("9_ikia7")
 
 [node name="BackgroundElements" type="Node2D" parent="."]
+visible = false
 position = Vector2(89, 95)
 scale = Vector2(74.2308, 12.5641)
 
@@ -451,6 +458,9 @@ position = Vector2(125, -198)
 position = Vector2(0, 184.5)
 shape = SubResource("RectangleShape2D_hgpy0")
 
+[node name="EngineFunction" parent="." instance=ExtResource("15_kn0ld")]
+position = Vector2(-2183, 379)
+
 [node name="Big Locker3" parent="." instance=ExtResource("3_5a7ea")]
 position = Vector2(-1243, 390)
 
@@ -493,34 +503,5 @@ position = Vector2(-917, 392)
 [node name="Big Locker16" parent="." instance=ExtResource("3_5a7ea")]
 position = Vector2(-1231, 211)
 
-[node name="Recycler" parent="." instance=ExtResource("2_hgpy0")]
-position = Vector2(-2443, 30)
-
-[node name="EndCheck" parent="." instance=ExtResource("18_0pcbe")]
-position = Vector2(11, -2)
-
-[node name="EngineFunction" parent="." instance=ExtResource("15_kn0ld")]
-position = Vector2(-2182, 379)
-
-[node name="F4-Door" type="Sprite2D" parent="."]
-position = Vector2(-1872, 359)
-texture = ExtResource("19_1cojt")
-
-[node name="Monster" parent="." instance=ExtResource("19_axeuq")]
-z_index = 1
-position = Vector2(-1832, -196)
-
-[node name="F3-Door" type="Sprite2D" parent="."]
-position = Vector2(-849, 181)
-texture = ExtResource("19_1cojt")
-
-[node name="F2-Door" type="Sprite2D" parent="."]
-position = Vector2(-1162, 0)
-texture = ExtResource("19_1cojt")
-
-[node name="F1-Door" type="Sprite2D" parent="."]
-position = Vector2(-833, -179)
-texture = ExtResource("19_1cojt")
-
-[node name="Marker" type="Node2D" parent="."]
-position = Vector2(-2140, 383)
+[node name="Monster" parent="." instance=ExtResource("18_0pcbe")]
+position = Vector2(-1689, -27)

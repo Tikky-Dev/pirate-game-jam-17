@@ -17,8 +17,14 @@ polygon = PackedVector2Array(-7, -88, -7, -10, -6, -10, -6, -88)
 polygon = PackedVector2Array(-6, -9, -6, 88, -4, 88, -4, -10, -6, -10)
 
 [node name="Door" type="Area2D"]
+collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_p0e35")
+
+[node name="DOOR" type="Label" parent="."]
+visible = false
+offset_right = 40.0
+offset_bottom = 23.0
 
 [node name="Frame" type="Sprite2D" parent="."]
 texture = ExtResource("2_fahql")

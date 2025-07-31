@@ -32,3 +32,12 @@ func _on_body_entered(body: Node2D) -> void:
 
 func _on_body_exited(body: Node2D) -> void:
 	can_interact = false
+
+func monsterOpensDoor() -> void:
+	while ($Top.position != Vector2(0, -42)):
+		$Top.position.y -= 1
+		$StaticBody2D/ToggleCollision.set_deferred("disabled", true)
+		$DoorOccluder.visible=false
+		door_sound_player.pitch_scale=randf_range(0.5,0.7)
+		door_sound_player.play(2.3)
+		is_open = true
