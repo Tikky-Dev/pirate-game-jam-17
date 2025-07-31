@@ -30,6 +30,7 @@ func BeginTheMonster() -> void:
 	$".".visible=true
 	state_machine.init()
 	$StateMachine/Roaming.player=$"../Player"
+	$StateMachine/Chase.player=$"../Player"
 	canMove=true
 	$Timer.start()
 

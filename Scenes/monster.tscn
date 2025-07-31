@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cdtwoe48va1ir" path="res://Placeholder Sprites/MonsterAnimations.png" id="1_s3gyj"]
 [ext_resource type="Script" uid="uid://caewjvej7gvxh" path="res://Scenes/Monster-state_machine.gd" id="3_ujuxu"]
 [ext_resource type="Script" uid="uid://cmqra1dsswf80" path="res://Scripts/roamingState.gd" id="4_cyu0s"]
-[ext_resource type="Script" path="res://Scenes/chase.gd" id="5_cyu0s"]
+[ext_resource type="Script" uid="uid://duyye7ggkekkb" path="res://Scenes/chase.gd" id="5_cyu0s"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hyvb2"]
 atlas = ExtResource("1_s3gyj")
@@ -229,9 +229,8 @@ script = ExtResource("1_i44lo")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_wdu3u")
-animation = &"idle"
+animation = &"attack"
 autoplay = "idle"
-frame_progress = 0.140396
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 40)

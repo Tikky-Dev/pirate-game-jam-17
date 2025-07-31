@@ -90,6 +90,10 @@ func process_physics(delta: float) -> State:
 	if Ray.get_collider()!=null:
 		if Ray.get_collider().get_child(0).name=="DOOR":
 			Ray.get_collider().monsterOpensDoor()
+	
+	
+	if Ray.get_collider()==player:
+		return $"../Chase"
 	return null
 
 func timerEvent() -> State:

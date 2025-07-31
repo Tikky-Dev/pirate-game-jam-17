@@ -30,7 +30,7 @@ func _input(event: InputEvent) -> void:
 					
 					$AnimatedSprite2D.frame = 2
 					$Label.visible = false
-					$label2.visible = false
+					$Label2.visible = false
 					is_hidden = true
 					$HideVoice.play()
 			elif not is_open:
