@@ -9,6 +9,7 @@ func enter() -> void:
 	super()
 	$"../..".velocity.x = 0
 	animSprite.play("walking")
+	monster.goRight()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func process_physics(delta: float) -> State:

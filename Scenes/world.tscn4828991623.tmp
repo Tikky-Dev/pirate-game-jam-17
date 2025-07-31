@@ -182,7 +182,6 @@ visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="Tool" parent="." instance=ExtResource("5_fo5ed")]
-z_index = 1
 position = Vector2(-2298, 56)
 
 [node name="TEXT" type="Control" parent="."]
