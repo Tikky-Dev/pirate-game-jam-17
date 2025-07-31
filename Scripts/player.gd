@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var SPEED = 100.0
+var SPEED = 150.0
 var JUMP_VELOCITY = -200.0
 var is_walking := false
 var has_hg := false #hg = handgun
@@ -110,13 +110,13 @@ func _input(event: InputEvent) -> void:
 			using_hg = false
 			GlobalVar.using_lg = false
 			using_pg = false
-			SPEED = 100
+			SPEED = 150
 			JUMP_VELOCITY = -200
 			$ArmPosition/ArmPivot/ArmSprite.frame = 0
 			$Sprite2D.visible = false
 			GlobalVar.has_tool = false
 	else:
-		SPEED = 100
+		SPEED = 150
 		JUMP_VELOCITY = -200
 		$Sprite2D.visible = false
 		if event.is_action_pressed("Lasergun"):

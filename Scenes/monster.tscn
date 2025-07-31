@@ -232,8 +232,8 @@ colors = PackedColorArray(0.572988, 0.572988, 0.572988, 1, 0, 0, 0, 1)
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_bua6k"]
 gradient = SubResource("Gradient_6ks7b")
 fill = 1
-fill_from = Vector2(0.545872, 0.495413)
-fill_to = Vector2(0.582569, 0.582569)
+fill_from = Vector2(0.412844, 0.422018)
+fill_to = Vector2(0.848624, 0.811927)
 
 [node name="Monster" type="CharacterBody2D"]
 collision_layer = 4
@@ -296,7 +296,8 @@ wait_time = 30.0
 one_shot = true
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-position = Vector2(-2, -4)
+position = Vector2(1, -4)
+scale = Vector2(0.15625, 0.171875)
 texture = SubResource("GradientTexture2D_bua6k")
 
 [connection signal="ready" from="." to="." method="_on_ready"]

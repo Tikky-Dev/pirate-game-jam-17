@@ -1,9 +1,10 @@
-[gd_scene load_steps=54 format=3 uid="uid://plspv66syaoo"]
+[gd_scene load_steps=55 format=3 uid="uid://plspv66syaoo"]
 
 [ext_resource type="Texture2D" uid="uid://ds71qhskojqr7" path="res://Placeholder Sprites/BridgeRoom-Addendum.png" id="1_a02cp"]
 [ext_resource type="PackedScene" uid="uid://rwyxdoekdp77" path="res://Scenes/player.tscn" id="2_go701"]
 [ext_resource type="PackedScene" uid="uid://doxqtn7hjlw2w" path="res://Scenes/recycler.tscn" id="2_hgpy0"]
 [ext_resource type="PackedScene" uid="uid://toqi11jj8cxx" path="res://Scenes/big_locker.tscn" id="3_5a7ea"]
+[ext_resource type="Texture2D" uid="uid://bx6uj5gf8m8fc" path="res://Placeholder Sprites/BridgeRoom.png" id="3_w5giw"]
 [ext_resource type="PackedScene" uid="uid://k6gtklavw1mv" path="res://Scenes/door.tscn" id="4_8j60k"]
 [ext_resource type="PackedScene" uid="uid://dktnk010g2nwq" path="res://Scenes/tool.tscn" id="5_fo5ed"]
 [ext_resource type="PackedScene" uid="uid://dy2sj138tvfd" path="res://Scenes/hud.tscn" id="5_t2t4p"]
@@ -163,6 +164,12 @@ region_rect = Rect2(885, 0, 224, 180)
 texture = ExtResource("1_a02cp")
 region_enabled = true
 region_rect = Rect2(0, 0, 230.417, 155)
+
+[node name="Sprite2D" type="Sprite2D" parent="BridgeSprite"]
+position = Vector2(87, 30)
+texture = ExtResource("3_w5giw")
+region_enabled = true
+region_rect = Rect2(91, 345, 85, 87)
 
 [node name="Player" parent="." instance=ExtResource("2_go701")]
 position = Vector2(35, 1)
@@ -667,33 +674,43 @@ autoplay = true
 
 [node name="ImagineAutomatic" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource("31_lkcvt")
+volume_db = -14.054
 
 [node name="IdesOfMystery" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource("32_atqvy")
+volume_db = -11.243
 
 [node name="DestinyCalls" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource("33_w5giw")
+volume_db = -12.18
 
 [node name="WhereToTurn" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource("34_jwdyn")
+volume_db = -12.18
 
 [node name="LostInTheHull" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource("35_t6yt7")
+volume_db = -12.18
 
 [node name="Solace" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource("36_al5m0")
+volume_db = -12.18
 
 [node name="WandererBridge" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource("37_6mm6r")
+volume_db = -12.18
 
 [node name="Cacophony" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource("38_xcb5n")
+volume_db = -12.18
 
 [node name="MasterPlan" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource("39_te07t")
+volume_db = -12.18
 
 [node name="PsychologyOfSolitude" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource("40_b4e6k")
+volume_db = -12.18
 
 [node name="LightOccluder2D4" type="LightOccluder2D" parent="."]
 position = Vector2(0, 179)

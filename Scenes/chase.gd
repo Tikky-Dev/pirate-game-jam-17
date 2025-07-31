@@ -6,14 +6,14 @@ var CanDealDamage=true
 
 func process_physics(delta: float) -> State:
 	
-	if monster.global_position.x<player.global_position.x-40:
+	if (monster.global_position.x<player.global_position.x-40) and Ray.get_collider()==player:
 		monster.goRight()
 		monster.velocity.x+=20
-	elif monster.global_position.x > player.global_position.x+40:
+	elif (monster.global_position.x > player.global_position.x+40) and Ray.get_collider()==player:
 		monster.goLeft()
 		monster.velocity.x-=20
 	
-	if monster.global_position.x<player.global_position.x+80 && monster.global_position.x > player.global_position.x-80:
+	if (monster.global_position.x<player.global_position.x+80 && monster.global_position.x > player.global_position.x-80) and Ray.get_collider()==player:
 		animSprite.play("attack")
 		monster.velocity.x=0
 		attacking=true
@@ -30,7 +30,7 @@ func process_physics(delta: float) -> State:
 		if GlobalVar.health<=0:
 			player.Die()
 			
-	if player.visible==false:
+	if player.visible==false or Ray.get_collider()!=player:
 		return $"../Roaming"
 	monster.move_and_slide()
 	return null
