@@ -1,12 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://bxjkwsqpx4dlx"]
+[gd_scene load_steps=6 format=3 uid="uid://bxjkwsqpx4dlx"]
 
 [ext_resource type="Script" uid="uid://bgecaj3fwe3i0" path="res://Scripts/healing.gd" id="1_81842"]
 [ext_resource type="AudioStream" uid="uid://xti3fywiwe75" path="res://audio/Healing - SFX.wav" id="2_igqie"]
 [ext_resource type="AudioStream" uid="uid://crwsqg7kk1xm1" path="res://audio/Line Misc Everythings Broken - SFX.wav" id="3_hbq7m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jb3vm"]
+size = Vector2(55, 87)
 
-[node name="Area2D" type="Area2D"]
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_hbq7m"]
+light_mode = 1
+
+[node name="Healing" type="Area2D"]
 collision_mask = 2
 script = ExtResource("1_81842")
 
@@ -18,6 +22,16 @@ stream = ExtResource("2_igqie")
 
 [node name="HealingVoice" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_hbq7m")
+
+[node name="Label" type="Label" parent="."]
+visible = false
+material = SubResource("CanvasItemMaterial_hbq7m")
+offset_left = -43.0
+offset_top = -61.0
+offset_right = 46.0
+offset_bottom = -44.0
+theme_override_font_sizes/font_size = 12
+text = "Interact to heal"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

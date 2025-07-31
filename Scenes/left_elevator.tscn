@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://1heira058ok1"]
+[gd_scene load_steps=12 format=3 uid="uid://1heira058ok1"]
 
 [ext_resource type="Script" uid="uid://lth4qv2xih4i" path="res://Scripts/left_elevator.gd" id="1_jdhbj"]
 [ext_resource type="Texture2D" uid="uid://cqf66ixvky68v" path="res://Sprites/Elevators.png" id="2_ai1kq"]
@@ -26,6 +26,9 @@ gradient = SubResource("Gradient_jdhbj")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.5, 0)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_enair"]
+light_mode = 1
 
 [node name="leftElevator" type="Area2D"]
 collision_mask = 2
@@ -81,6 +84,18 @@ stream = ExtResource("4_enair")
 
 [node name="RepairVoice" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_0jhhw")
+
+[node name="NeedRepair" type="Label" parent="."]
+visible = false
+material = SubResource("CanvasItemMaterial_enair")
+offset_left = -64.0
+offset_top = 9.0
+offset_right = 64.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 10
+text = "Interact with tool to repair
+2 metal required to repair"
+horizontal_alignment = 1
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

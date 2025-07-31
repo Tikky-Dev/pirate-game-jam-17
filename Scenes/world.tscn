@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://plspv66syaoo"]
+[gd_scene load_steps=38 format=3 uid="uid://plspv66syaoo"]
 
 [ext_resource type="Texture2D" uid="uid://ds71qhskojqr7" path="res://Placeholder Sprites/BridgeRoom-Addendum.png" id="1_a02cp"]
 [ext_resource type="PackedScene" uid="uid://rwyxdoekdp77" path="res://Scenes/player.tscn" id="2_go701"]
@@ -22,6 +22,10 @@
 [ext_resource type="PackedScene" uid="uid://1kduh3qyqq2h" path="res://Scenes/monster.tscn" id="19_axeuq"]
 [ext_resource type="Script" uid="uid://cmga1vuh0yhql" path="res://Scenes/Door1.gd" id="21_pyn1s"]
 [ext_resource type="AudioStream" uid="uid://bmu3a0s83queq" path="res://audio/Toxic Atmosphere - SFX.wav" id="21_yq1aw"]
+[ext_resource type="Texture2D" uid="uid://djqy1bq8ydl1h" path="res://Sprites/InfirmaryRoom.png" id="23_xbk3s"]
+[ext_resource type="Texture2D" uid="uid://bb130ni4il602" path="res://Sprites/ArmoryRoom.png" id="24_i4fjy"]
+[ext_resource type="PackedScene" uid="uid://bxjkwsqpx4dlx" path="res://Scenes/healing.tscn" id="25_i4fjy"]
+[ext_resource type="PackedScene" uid="uid://dx8i01auy878w" path="res://Scenes/generator_function.tscn" id="26_pt3ps"]
 
 [sub_resource type="Gradient" id="Gradient_yq1aw"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
@@ -120,10 +124,10 @@ region_rect = Rect2(885, 0, 224, 180)
 
 [node name="WallsPh9" type="Sprite2D" parent="Walls"]
 z_index = -1
-position = Vector2(-997, -192)
+position = Vector2(-1048, -192)
 texture = ExtResource("6_5ukr8")
 region_enabled = true
-region_rect = Rect2(510, 0, 599, 180)
+region_rect = Rect2(355, 0, 754, 180)
 
 [node name="WallsPh10" type="Sprite2D" parent="Walls"]
 z_index = -1
@@ -171,7 +175,6 @@ position = Vector2(-273, 211)
 position = Vector2(-342, 34)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="Tool" parent="." instance=ExtResource("5_fo5ed")]
@@ -235,10 +238,10 @@ position = Vector2(764, -180)
 position = Vector2(614, -180)
 
 [node name="Door18" parent="Doors" instance=ExtResource("4_8j60k")]
-position = Vector2(1, -179)
+position = Vector2(-127, -179)
 
 [node name="Door19" parent="Doors" instance=ExtResource("4_8j60k")]
-position = Vector2(-367, -179)
+position = Vector2(-422, -179)
 
 [node name="Door14" parent="Doors" instance=ExtResource("4_8j60k")]
 position = Vector2(-698, 359)
@@ -251,7 +254,6 @@ texture = ExtResource("8_0fj1v")
 script = ExtResource("9_ikia7")
 
 [node name="BackgroundElements" type="Node2D" parent="."]
-visible = false
 position = Vector2(89, 95)
 scale = Vector2(74.2308, 12.5641)
 
@@ -584,5 +586,28 @@ occluder = SubResource("OccluderPolygon2D_xbk3s")
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 occluder = SubResource("OccluderPolygon2D_i4fjy")
+
+[node name="Infirmary" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(-1864, -194)
+texture = ExtResource("23_xbk3s")
+region_enabled = true
+region_rect = Rect2(2, 0, 261, 182)
+
+[node name="Infirmary2" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(-1579, -195)
+texture = ExtResource("24_i4fjy")
+region_enabled = true
+region_rect = Rect2(5, 4, 281, 181)
+
+[node name="Healing" parent="." instance=ExtResource("25_i4fjy")]
+position = Vector2(-1876, -151)
+
+[node name="GeneratorFunction" parent="." instance=ExtResource("26_pt3ps")]
+position = Vector2(-197, 38)
+
+[node name="GeneratorFunction2" parent="." instance=ExtResource("26_pt3ps")]
+position = Vector2(-2241, 219)
 
 [connection signal="body_entered" from="F1-Door/Area2D" to="F1-Door/Area2D" method="_on_body_entered"]

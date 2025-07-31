@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://dx8i01auy878w"]
+
+[ext_resource type="AudioStream" uid="uid://mc1012tvh4p6" path="res://audio/Reloading - SFX.wav" id="1_b2v8q"]
+[ext_resource type="Script" uid="uid://creo0n2cg6gev" path="res://Scenes/generator_function.gd" id="1_mhkmv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mhkmv"]
+size = Vector2(82, 72)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_mhkmv"]
+light_mode = 1
+
+[node name="GeneratorFunction" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_mhkmv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_mhkmv")
+
+[node name="Charge" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("1_b2v8q")
+
+[node name="InteractLabel" type="Label" parent="."]
+visible = false
+material = SubResource("CanvasItemMaterial_mhkmv")
+offset_left = -78.0
+offset_top = -52.0
+offset_right = 74.0
+offset_bottom = -38.0
+theme_override_font_sizes/font_size = 10
+text = "Interact with gun to charge gun"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

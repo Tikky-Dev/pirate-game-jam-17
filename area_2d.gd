@@ -14,7 +14,7 @@ func _input(event: InputEvent) -> void:
 					$Sound.play(4)
 					$"../Player".global_position.y += 180
 		elif GlobalVar.rightElevatorRepaired == false:
-			if GlobalVar.has_tool:
+			if (GlobalVar.has_tool == true and GlobalVar.metal >= 2):
 				if event.is_action_pressed("Interact"):
 					$RepairSound.play(0.5)
 					$RepairVoice.play()
@@ -26,9 +26,12 @@ func _on_body_entered(body: Node2D) -> void:
 	$Up.visible = true
 	$Down.visible = true
 	$PointLight2D.visible = true
+	if !GlobalVar.rightElevatorRepaired:
+		$NeedRepair.visible = true
 
 func _on_body_exited(body: Node2D) -> void:
 	can_interact = false
 	$Up.visible = false
 	$Down.visible = false
 	$PointLight2D.visible = false
+	$NeedRepair.visible = false

@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://n8iogqna7p0h"]
+
+[ext_resource type="Script" uid="uid://bk5fa4xava7tv" path="res://gun.gd" id="1_oqrbh"]
+[ext_resource type="Texture2D" uid="uid://dtitvmtbj1bfp" path="res://Sprites/tools.png" id="2_t6ynv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_k4teu"]
+radius = 11.0454
+
+[sub_resource type="Gradient" id="Gradient_ikia7"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_oqrbh"]
+gradient = SubResource("Gradient_ikia7")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
+[node name="Gun" type="Area2D"]
+script = ExtResource("1_oqrbh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_t6ynv")
+region_enabled = true
+region_rect = Rect2(4, 35, 16, 10)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_k4teu")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+texture = SubResource("GradientTexture2D_oqrbh")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

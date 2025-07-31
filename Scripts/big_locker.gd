@@ -17,6 +17,10 @@ func _input(event: InputEvent) -> void:
 					$"../Player".visible=true
 					$"../Player".canMove=true
 					$HideLight.visible=false
+					$Label2.text = "Interact to hide"
+					$Label2.visible = true
+					if GlobalVar.has_tool:
+						$Label.visible = true
 					$LeaveVoice.play()
 				elif not is_hidden:
 					print("Hidden")
@@ -26,6 +30,7 @@ func _input(event: InputEvent) -> void:
 					
 					$AnimatedSprite2D.frame = 2
 					$Label.visible = false
+					$label2.visible = false
 					is_hidden = true
 					$HideVoice.play()
 			elif not is_open:
@@ -53,9 +58,16 @@ func _input(event: InputEvent) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	can_interact = true
-	if is_open and GlobalVar.has_tool:
-		$Label.visible = true
+	if is_open:
+		$Label2.text = "Interact to hide"
+		$Label2.visible = true
+		if GlobalVar.has_tool:
+			$Label.visible = true
+	if !is_open:
+		$Label2.text = "Interact to open"
+		$Label2.visible = true
 
 func _on_body_exited(body: Node2D) -> void:
 	can_interact = false
 	$Label.visible = false
+	$Label2.visible = false

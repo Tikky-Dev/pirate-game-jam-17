@@ -14,6 +14,8 @@ func _input(event: InputEvent) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	can_interact = true
+	$Label2.visible = true
 
 func _on_body_exited(body: Node2D) -> void:
 	can_interact = false
+	$Label2.visible = false
