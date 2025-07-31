@@ -27,6 +27,8 @@ region_rect = Rect2(4, 35, 16, 10)
 shape = SubResource("CircleShape2D_k4teu")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(0.75, -0.500001)
+scale = Vector2(0.351563, 0.296875)
 texture = SubResource("GradientTexture2D_oqrbh")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://plspv66syaoo"]
+[gd_scene load_steps=54 format=3 uid="uid://plspv66syaoo"]
 
 [ext_resource type="Texture2D" uid="uid://ds71qhskojqr7" path="res://Placeholder Sprites/BridgeRoom-Addendum.png" id="1_a02cp"]
 [ext_resource type="PackedScene" uid="uid://rwyxdoekdp77" path="res://Scenes/player.tscn" id="2_go701"]
@@ -29,6 +29,18 @@
 [ext_resource type="Script" uid="uid://c6ibtaivikxsa" path="res://Scenes/Door2.gd" id="26_hmc15"]
 [ext_resource type="PackedScene" uid="uid://dx8i01auy878w" path="res://Scenes/generator_function.tscn" id="26_pt3ps"]
 [ext_resource type="Script" uid="uid://d4b3ikix34a86" path="res://Scenes/Door4.gd" id="26_qebug"]
+[ext_resource type="Script" uid="uid://crvhhpxksu0k5" path="res://Scenes/audio.gd" id="30_atqvy"]
+[ext_resource type="PackedScene" uid="uid://n8iogqna7p0h" path="res://Scenes/gun.tscn" id="30_o2rbt"]
+[ext_resource type="AudioStream" uid="uid://d3oo2yjhomg4p" path="res://audio/Imagine Automatic - Requiem.wav" id="31_lkcvt"]
+[ext_resource type="AudioStream" uid="uid://ddfeom5siparu" path="res://audio/Ides of Mystery - Dark Ambient.wav" id="32_atqvy"]
+[ext_resource type="AudioStream" uid="uid://184prrefkp3o" path="res://audio/Destiny Calls - Fanfare.wav" id="33_w5giw"]
+[ext_resource type="AudioStream" uid="uid://b8x00v3ykkkic" path="res://audio/Where to Turn - Fanfare.wav" id="34_jwdyn"]
+[ext_resource type="AudioStream" uid="uid://c52oiirlivx8w" path="res://audio/Lost in the Hull - Dark Ambient.wav" id="35_t6yt7"]
+[ext_resource type="AudioStream" uid="uid://5q18ukiqg5yn" path="res://audio/Solace - Overture.wav" id="36_al5m0"]
+[ext_resource type="AudioStream" uid="uid://b4bppt1sq1v5x" path="res://audio/Wanderer_s Bridge - Electronic Interlude.wav" id="37_6mm6r"]
+[ext_resource type="AudioStream" uid="uid://du3se0d10fjyx" path="res://audio/Cacophony - Dark Ambient.wav" id="38_xcb5n"]
+[ext_resource type="AudioStream" uid="uid://bl24cqkrs7p4e" path="res://audio/Master Plan - Finale.wav" id="39_te07t"]
+[ext_resource type="AudioStream" uid="uid://cstd6ucvodk1l" path="res://audio/Psychology of Solitude - Fugue.wav" id="40_b4e6k"]
 
 [sub_resource type="Gradient" id="Gradient_yq1aw"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
@@ -53,6 +65,9 @@ fill_to = Vector2(0.5, 0)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hgpy0"]
 size = Vector2(20, 181.5)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_o2rbt"]
+light_mode = 1
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_pyn1s"]
 polygon = PackedVector2Array(-2549, 78, -2549, 74, 136, 73, 136, 79)
@@ -156,12 +171,13 @@ position = Vector2(35, 1)
 texture = SubResource("GradientTexture2D_5ukr8")
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(1.65, 1.65)
 
 [node name="HUD" parent="Player" instance=ExtResource("5_t2t4p")]
-offset_left = -561.0
-offset_top = -320.0
-offset_right = -560.728
-offset_bottom = -319.816
+offset_left = -346.0
+offset_top = -199.0
+offset_right = -345.728
+offset_bottom = -198.816
 
 [node name="floor" type="StaticBody2D" parent="."]
 position = Vector2(-336, 0)
@@ -178,7 +194,6 @@ position = Vector2(-273, 211)
 position = Vector2(-342, 34)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="Tool" parent="." instance=ExtResource("5_fo5ed")]
@@ -407,6 +422,15 @@ texture = ExtResource("13_e0ngr")
 region_enabled = true
 region_rect = Rect2(0, 0, 368, 180)
 
+[node name="Label2" type="Label" parent="Sprite2D"]
+material = SubResource("CanvasItemMaterial_o2rbt")
+offset_left = -50.0
+offset_top = -72.0
+offset_right = 65.0
+offset_bottom = -52.0
+theme_override_font_sizes/font_size = 14
+text = "1 Scrap = 1 Metal"
+
 [node name="Border3" type="StaticBody2D" parent="."]
 position = Vector2(-2539, -170)
 
@@ -531,10 +555,6 @@ position = Vector2(-2182, 379)
 [node name="Marker" type="Node2D" parent="."]
 position = Vector2(-797, -129)
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("21_yq1aw")
-autoplay = true
-
 [node name="LightOccluder2D2" type="LightOccluder2D" parent="."]
 occluder = SubResource("OccluderPolygon2D_pyn1s")
 
@@ -554,7 +574,16 @@ texture = ExtResource("23_xbk3s")
 region_enabled = true
 region_rect = Rect2(2, 0, 261, 182)
 
-[node name="Infirmary2" type="Sprite2D" parent="."]
+[node name="Label2" type="Label" parent="Infirmary"]
+material = SubResource("CanvasItemMaterial_o2rbt")
+offset_left = -50.0
+offset_top = -58.0
+offset_right = 94.0
+offset_bottom = -38.0
+theme_override_font_sizes/font_size = 14
+text = "2 Organics = 1 Health"
+
+[node name="Armory" type="Sprite2D" parent="."]
 z_index = -1
 position = Vector2(-1579, -195)
 texture = ExtResource("24_i4fjy")
@@ -626,6 +655,61 @@ script = ExtResource("21_pyn1s")
 position = Vector2(0.5, 27)
 shape = SubResource("RectangleShape2D_no8kt")
 
+[node name="Gun" parent="." instance=ExtResource("30_o2rbt")]
+position = Vector2(-1582, -121)
+
+[node name="Audio" type="Node" parent="."]
+script = ExtResource("30_atqvy")
+
+[node name="ToxicAtmosphere" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("21_yq1aw")
+autoplay = true
+
+[node name="ImagineAutomatic" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("31_lkcvt")
+
+[node name="IdesOfMystery" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("32_atqvy")
+
+[node name="DestinyCalls" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("33_w5giw")
+
+[node name="WhereToTurn" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("34_jwdyn")
+
+[node name="LostInTheHull" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("35_t6yt7")
+
+[node name="Solace" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("36_al5m0")
+
+[node name="WandererBridge" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("37_6mm6r")
+
+[node name="Cacophony" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("38_xcb5n")
+
+[node name="MasterPlan" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("39_te07t")
+
+[node name="PsychologyOfSolitude" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("40_b4e6k")
+
+[node name="LightOccluder2D4" type="LightOccluder2D" parent="."]
+position = Vector2(0, 179)
+occluder = SubResource("OccluderPolygon2D_pyn1s")
+
 [connection signal="body_entered" from="F3-Door/Area2D" to="F3-Door/Area2D" method="_on_body_entered"]
 [connection signal="body_entered" from="F2-Door/Area2D" to="F2-Door/Area2D" method="_on_body_entered"]
 [connection signal="body_entered" from="F1-Door/Area2D" to="F1-Door/Area2D" method="_on_body_entered"]
+[connection signal="finished" from="Audio/ToxicAtmosphere" to="Audio" method="_on_toxic_atmosphere_finished"]
+[connection signal="finished" from="Audio/ImagineAutomatic" to="Audio" method="_on_imagine_automatic_finished"]
+[connection signal="finished" from="Audio/IdesOfMystery" to="Audio" method="_on_ides_of_mystery_finished"]
+[connection signal="finished" from="Audio/DestinyCalls" to="Audio" method="_on_destiny_calls_finished"]
+[connection signal="finished" from="Audio/WhereToTurn" to="Audio" method="_on_where_to_turn_finished"]
+[connection signal="finished" from="Audio/LostInTheHull" to="Audio" method="_on_lost_in_the_hull_finished"]
+[connection signal="finished" from="Audio/Solace" to="Audio" method="_on_solace_finished"]
+[connection signal="finished" from="Audio/WandererBridge" to="Audio" method="_on_wanderer_bridge_finished"]
+[connection signal="finished" from="Audio/Cacophony" to="Audio" method="_on_cacophony_finished"]
+[connection signal="finished" from="Audio/MasterPlan" to="Audio" method="_on_master_plan_finished"]
+[connection signal="finished" from="Audio/PsychologyOfSolitude" to="Audio" method="_on_psychology_of_solitude_finished"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://1kduh3qyqq2h"]
+[gd_scene load_steps=39 format=3 uid="uid://1kduh3qyqq2h"]
 
 [ext_resource type="Script" uid="uid://ssr40h5cydvx" path="res://Scenes/monster.gd" id="1_i44lo"]
 [ext_resource type="Texture2D" uid="uid://cdtwoe48va1ir" path="res://Placeholder Sprites/MonsterAnimations.png" id="1_s3gyj"]
@@ -225,6 +225,16 @@ animations = [{
 radius = 18.0
 height = 100.0
 
+[sub_resource type="Gradient" id="Gradient_6ks7b"]
+offsets = PackedFloat32Array(0.733766, 1)
+colors = PackedColorArray(0.572988, 0.572988, 0.572988, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_bua6k"]
+gradient = SubResource("Gradient_6ks7b")
+fill = 1
+fill_from = Vector2(0.545872, 0.495413)
+fill_to = Vector2(0.582569, 0.582569)
+
 [node name="Monster" type="CharacterBody2D"]
 collision_layer = 4
 collision_mask = 4
@@ -284,6 +294,10 @@ autostart = true
 [node name="IdleTimer" type="Timer" parent="."]
 wait_time = 30.0
 one_shot = true
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(-2, -4)
+texture = SubResource("GradientTexture2D_bua6k")
 
 [connection signal="ready" from="." to="." method="_on_ready"]
 [connection signal="timeout" from="Timer" to="StateMachine" method="_on_timer_timeout"]

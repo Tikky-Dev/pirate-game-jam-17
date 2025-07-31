@@ -77,7 +77,7 @@ offset_left = 486.0
 offset_top = 257.0
 offset_right = 654.0
 offset_bottom = 280.0
-text = "It seems to be broken"
+text = "It needs to charge"
 
 [node name="PointLight2D" type="PointLight2D" parent="Broken"]
 visible = false

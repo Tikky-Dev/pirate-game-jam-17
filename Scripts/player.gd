@@ -1,6 +1,5 @@
 extends CharacterBody2D
 
-
 var SPEED = 100.0
 var JUMP_VELOCITY = -200.0
 var is_walking := false
@@ -86,12 +85,16 @@ func _input(event: InputEvent) -> void:
 	if GlobalVar.using_lg:
 		if event.is_action_pressed("useTool"):
 			if GlobalVar.usedGun==false:
-				
+				$Shoot.play()
+				GlobalVar.usedGun = true
 				if $ArmPosition/ArmPivot/RayCast2D.get_collider()!=null:
 					print($ArmPosition/ArmPivot/RayCast2D.get_collider())
 					if $ArmPosition/ArmPivot/RayCast2D.get_collider()==$"../Monster":
 						
 						$"../Monster".state_machine.goIdle()
+			if GlobalVar.usedsGun == true:
+				$GottaGetVoice.play()
+				$Click.play()
 	if GlobalVar.has_tool == true:
 		if event.is_action_pressed("Interact"):
 			using_flashlight = false
@@ -123,7 +126,7 @@ func _input(event: InputEvent) -> void:
 				GlobalVar.using_lg = true
 				using_pg = false
 				$ArmPosition/ArmPivot/ArmSprite.frame = 1
-		elif event.is_action_pressed("Flashlight"):
+		if event.is_action_pressed("Flashlight"):
 			using_flashlight = true
 			using_hg = false
 			GlobalVar.using_lg = false
