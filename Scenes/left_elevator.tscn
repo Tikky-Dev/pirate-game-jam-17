@@ -1,7 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://1heira058ok1"]
+[gd_scene load_steps=11 format=3 uid="uid://1heira058ok1"]
 
 [ext_resource type="Script" uid="uid://lth4qv2xih4i" path="res://Scripts/left_elevator.gd" id="1_jdhbj"]
 [ext_resource type="Texture2D" uid="uid://cqf66ixvky68v" path="res://Sprites/Elevators.png" id="2_ai1kq"]
+[ext_resource type="AudioStream" uid="uid://8bymedvkjm1y" path="res://audio/Elevator - SFX.wav" id="3_ai1kq"]
+[ext_resource type="AudioStream" uid="uid://dhf616uba0j5h" path="res://audio/Break Down Metal - SFX.wav" id="4_enair"]
+[ext_resource type="AudioStream" uid="uid://bhw78mm1geui4" path="res://audio/Line Engine Finally Work is Paying Off - SFX.wav" id="5_0jhhw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7i85y"]
 size = Vector2(134.71, 176.065)
@@ -69,6 +72,15 @@ visible = false
 position = Vector2(0, -13)
 texture = SubResource("GradientTexture2D_ai1kq")
 texture_scale = 0.5
+
+[node name="Sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_ai1kq")
+
+[node name="RepairSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_enair")
+
+[node name="RepairVoice" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_0jhhw")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

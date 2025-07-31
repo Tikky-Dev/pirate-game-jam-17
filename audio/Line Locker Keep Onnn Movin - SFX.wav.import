@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://nbuskel7oatx"
+path="res://.godot/imported/Line Locker Keep Onnn Movin - SFX.wav-64c779b204c29b644d66a0bf05dbf0c3.sample"
+
+[deps]
+
+source_file="res://audio/Line Locker Keep Onnn Movin - SFX.wav"
+dest_files=["res://.godot/imported/Line Locker Keep Onnn Movin - SFX.wav-64c779b204c29b644d66a0bf05dbf0c3.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

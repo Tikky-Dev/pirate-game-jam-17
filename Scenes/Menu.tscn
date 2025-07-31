@@ -10,7 +10,7 @@ script = ExtResource("1_3kf3n")
 offset_right = 1151.0
 offset_bottom = 123.0
 theme_override_font_sizes/font_size = 70
-text = "Title"
+text = "You are NOT Alone"
 horizontal_alignment = 1
 vertical_alignment = 1
 

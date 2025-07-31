@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://tnouxmn34kmm"]
+[gd_scene load_steps=4 format=3 uid="uid://tnouxmn34kmm"]
 
 [ext_resource type="Script" uid="uid://cnod6fhl47uvm" path="res://engine_function.gd" id="1_l3mog"]
+[ext_resource type="AudioStream" uid="uid://druhvr577e6uo" path="res://audio/Line Engine That Babys Hummin - SFX.wav" id="2_l3mog"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6e4gc"]
 size = Vector2(154, 108)
@@ -11,6 +12,11 @@ script = ExtResource("1_l3mog")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_6e4gc")
+
+[node name="RepairSound" type="AudioStreamPlayer2D" parent="."]
+
+[node name="RepairVoice" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_l3mog")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

@@ -8,6 +8,7 @@ var is_hidden = false
 func _input(event: InputEvent) -> void:
 	if can_interact:
 		if event.is_action_pressed("Interact"):
+			$Interact.play(2.3)
 			if is_open:
 				if is_hidden:
 					print("Shown")
@@ -16,6 +17,7 @@ func _input(event: InputEvent) -> void:
 					$"../Player".visible=true
 					$"../Player".canMove=true
 					$HideLight.visible=false
+					$LeaveVoice.play()
 				elif not is_hidden:
 					print("Hidden")
 					$"../Player".visible=false
@@ -25,6 +27,7 @@ func _input(event: InputEvent) -> void:
 					$AnimatedSprite2D.frame = 2
 					$Label.visible = false
 					is_hidden = true
+					$HideVoice.play()
 			elif not is_open:
 				var selection = randf()
 				print(selection)
@@ -39,9 +42,11 @@ func _input(event: InputEvent) -> void:
 					print("Metal" + str(GlobalVar.metal))
 				$AnimatedSprite2D.frame = 1
 				is_open = true
+				$OpenVoice.play()
 		if event.is_action_pressed("useTool"):
 			if GlobalVar.has_tool:
 				if is_open:
+					$Breakdown.play(0.5)
 					GlobalVar.scraps += 2
 					$".".visible = false
 					$CollisionShape2D.disabled = true

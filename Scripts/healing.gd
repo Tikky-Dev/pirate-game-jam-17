@@ -6,6 +6,8 @@ func _input(event: InputEvent) -> void:
 	if can_interact:
 		if event.is_action_pressed("Interact"):
 			if (GlobalVar.health < 2 and GlobalVar.organics >= 2):
+				$HealingSound.play()
+				$HealingVoice.play()
 				GlobalVar.health += 1
 				GlobalVar.organics -= 2
 			print(GlobalVar.health)

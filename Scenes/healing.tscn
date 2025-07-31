@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bxjkwsqpx4dlx"]
+[gd_scene load_steps=5 format=3 uid="uid://bxjkwsqpx4dlx"]
 
 [ext_resource type="Script" uid="uid://bgecaj3fwe3i0" path="res://Scripts/healing.gd" id="1_81842"]
+[ext_resource type="AudioStream" uid="uid://xti3fywiwe75" path="res://audio/Healing - SFX.wav" id="2_igqie"]
+[ext_resource type="AudioStream" uid="uid://crwsqg7kk1xm1" path="res://audio/Line Misc Everythings Broken - SFX.wav" id="3_hbq7m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jb3vm"]
 
@@ -10,6 +12,12 @@ script = ExtResource("1_81842")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_jb3vm")
+
+[node name="HealingSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_igqie")
+
+[node name="HealingVoice" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_hbq7m")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

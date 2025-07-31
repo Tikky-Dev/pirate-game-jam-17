@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://plspv66syaoo"]
+[gd_scene load_steps=28 format=3 uid="uid://plspv66syaoo"]
 
 [ext_resource type="Texture2D" uid="uid://ds71qhskojqr7" path="res://Placeholder Sprites/BridgeRoom-Addendum.png" id="1_a02cp"]
 [ext_resource type="PackedScene" uid="uid://rwyxdoekdp77" path="res://Scenes/player.tscn" id="2_go701"]
@@ -20,12 +20,13 @@
 [ext_resource type="PackedScene" uid="uid://cx5snp8v8thp5" path="res://Scenes/end_check.tscn" id="18_0pcbe"]
 [ext_resource type="Texture2D" uid="uid://ba1dlumrfcm7r" path="res://Placeholder Sprites/MonsterDoor.png" id="19_1cojt"]
 [ext_resource type="PackedScene" uid="uid://1kduh3qyqq2h" path="res://Scenes/monster.tscn" id="19_axeuq"]
+[ext_resource type="AudioStream" uid="uid://bmu3a0s83queq" path="res://audio/Toxic Atmosphere - SFX.wav" id="21_yq1aw"]
 
-[sub_resource type="Gradient" id="Gradient_t2t4p"]
+[sub_resource type="Gradient" id="Gradient_yq1aw"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_5ukr8"]
-gradient = SubResource("Gradient_t2t4p")
+gradient = SubResource("Gradient_yq1aw")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.5, 0)
@@ -524,3 +525,7 @@ texture = ExtResource("19_1cojt")
 
 [node name="Marker" type="Node2D" parent="."]
 position = Vector2(-2140, 383)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("21_yq1aw")
+autoplay = true

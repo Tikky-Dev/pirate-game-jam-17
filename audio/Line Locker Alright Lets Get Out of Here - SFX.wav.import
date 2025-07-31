@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cdnbhhwygjxgi"
+path="res://.godot/imported/Line Locker Alright Lets Get Out of Here - SFX.wav-29a96a93ae6536753032b9a89a79efd1.sample"
+
+[deps]
+
+source_file="res://audio/Line Locker Alright Lets Get Out of Here - SFX.wav"
+dest_files=["res://.godot/imported/Line Locker Alright Lets Get Out of Here - SFX.wav-29a96a93ae6536753032b9a89a79efd1.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

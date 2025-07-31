@@ -6,6 +6,7 @@ func _input(event: InputEvent) -> void:
 	if can_interact:
 		if event.is_action_pressed("Interact"):
 			if GlobalVar.scraps > 0:
+				$Scrap.play(0.5)
 				GlobalVar.scraps -= 1
 				GlobalVar.metal += 1
 

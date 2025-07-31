@@ -1,7 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://cy8rvtpx8gvik"]
+[gd_scene load_steps=10 format=3 uid="uid://cy8rvtpx8gvik"]
 
 [ext_resource type="Script" uid="uid://dp46jiiex7rby" path="res://area_2d.gd" id="1_cyba6"]
 [ext_resource type="Texture2D" uid="uid://cqf66ixvky68v" path="res://Sprites/Elevators.png" id="2_7i85y"]
+[ext_resource type="AudioStream" uid="uid://8bymedvkjm1y" path="res://audio/Elevator - SFX.wav" id="3_5rne0"]
+[ext_resource type="AudioStream" uid="uid://bhw78mm1geui4" path="res://audio/Line Engine Finally Work is Paying Off - SFX.wav" id="4_boikr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7i85y"]
 size = Vector2(134.71, 176.065)
@@ -69,6 +71,14 @@ visible = false
 position = Vector2(1, -14)
 texture = SubResource("GradientTexture2D_4y0mv")
 texture_scale = 0.5
+
+[node name="Sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_5rne0")
+
+[node name="RepairSound" type="AudioStreamPlayer2D" parent="."]
+
+[node name="RepairVoice" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_boikr")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

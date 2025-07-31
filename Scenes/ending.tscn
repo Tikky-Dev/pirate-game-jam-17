@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://udpob7envfn6"]
+[gd_scene load_steps=3 format=3 uid="uid://udpob7envfn6"]
 
 [ext_resource type="Script" uid="uid://bujb0n75kas7h" path="res://Scenes/ending.gd" id="1_5jm55"]
+[ext_resource type="AudioStream" uid="uid://b8x00v3ykkkic" path="res://audio/Where to Turn - Fanfare.wav" id="2_kg0jb"]
 
 [node name="Ending" type="Node2D"]
 script = ExtResource("1_5jm55")
@@ -16,3 +17,6 @@ You Beat the game
 Press Enter to return to the main menu..."
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_kg0jb")

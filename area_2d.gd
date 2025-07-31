@@ -7,15 +7,17 @@ func _input(event: InputEvent) -> void:
 		if GlobalVar.rightElevatorRepaired:
 			if event.is_action_pressed("upElevator"):
 				if $"../Player".global_position.y > -105:
-					print("Moved up")
+					$Sound.play(4)
 					$"../Player".global_position.y -= 180
 			if event.is_action_pressed("downElevator"):
 				if $"../Player".global_position.y < 255:
-					print("Moved down")
+					$Sound.play(4)
 					$"../Player".global_position.y += 180
 		elif GlobalVar.rightElevatorRepaired == false:
 			if GlobalVar.has_tool:
 				if event.is_action_pressed("Interact"):
+					$RepairSound.play(0.5)
+					$RepairVoice.play()
 					GlobalVar.rightElevatorRepaired = true
 					GlobalVar.metal -= 2
 
