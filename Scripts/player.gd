@@ -16,7 +16,7 @@ var health=3
 
 func _physics_process(delta: float) -> void:
 	
-	if health <=0:
+	if GlobalVar.health <=0:
 		if $AnimatedSprite2D.frame==12:
 			$AnimatedSprite2D.pause()
 		await get_tree().create_timer(0.5).timeout

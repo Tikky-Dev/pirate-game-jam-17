@@ -26,8 +26,8 @@ func process_physics(delta: float) -> State:
 	
 	if animSprite.frame==8 && attacking && CanDealDamage:
 		CanDealDamage=false
-		player.health-=1
-		if player.health<=0:
+		GlobalVar.health-=1
+		if GlobalVar.health<=0:
 			player.Die()
 			
 	if player.visible==false:
