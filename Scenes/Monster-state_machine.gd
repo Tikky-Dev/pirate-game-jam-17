@@ -29,5 +29,5 @@ func _on_timer_timeout() -> void:
 	pass # Replace with function body.
 
 func goIdle() -> void:
-	
+	$"../IdleTimer".start()
 	change_state($Idle)

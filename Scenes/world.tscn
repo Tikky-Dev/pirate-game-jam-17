@@ -572,7 +572,7 @@ position = Vector2(-2241, 219)
 
 [node name="Monster" parent="." instance=ExtResource("19_axeuq")]
 z_index = 1
-position = Vector2(-1278, -199)
+position = Vector2(-1278, -196)
 
 [node name="F4-Door" type="Sprite2D" parent="."]
 position = Vector2(-1872, 359)
