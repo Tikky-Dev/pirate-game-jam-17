@@ -5,6 +5,7 @@ var can_interact = false
 @onready var door_sound_player: AudioStreamPlayer2D = $DoorSoundPlayer
 
 func _input(event: InputEvent) -> void:
+	
 	if can_interact:
 		if event.is_action_pressed("Interact"):
 			if is_open:

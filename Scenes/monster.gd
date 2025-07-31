@@ -4,6 +4,8 @@ extends CharacterBody2D
 var flipped=false
 var canMove=false
 var floor=1
+var goToMonsterDoor=false
+var goingUp=false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
@@ -29,6 +31,7 @@ func BeginTheMonster() -> void:
 	state_machine.init()
 	$StateMachine/Roaming.player=$"../Player"
 	canMove=true
+	$Timer.start()
 
 
 func _on_ready() -> void:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://plspv66syaoo"]
+[gd_scene load_steps=34 format=3 uid="uid://plspv66syaoo"]
 
 [ext_resource type="Texture2D" uid="uid://ds71qhskojqr7" path="res://Placeholder Sprites/BridgeRoom-Addendum.png" id="1_a02cp"]
 [ext_resource type="PackedScene" uid="uid://rwyxdoekdp77" path="res://Scenes/player.tscn" id="2_go701"]
@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://cx5snp8v8thp5" path="res://Scenes/end_check.tscn" id="18_0pcbe"]
 [ext_resource type="Texture2D" uid="uid://ba1dlumrfcm7r" path="res://Placeholder Sprites/MonsterDoor.png" id="19_1cojt"]
 [ext_resource type="PackedScene" uid="uid://1kduh3qyqq2h" path="res://Scenes/monster.tscn" id="19_axeuq"]
+[ext_resource type="Script" uid="uid://cmga1vuh0yhql" path="res://Scenes/Door1.gd" id="21_pyn1s"]
 [ext_resource type="AudioStream" uid="uid://bmu3a0s83queq" path="res://audio/Toxic Atmosphere - SFX.wav" id="21_yq1aw"]
 
 [sub_resource type="Gradient" id="Gradient_yq1aw"]
@@ -45,6 +46,21 @@ fill_to = Vector2(0.5, 0)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hgpy0"]
 size = Vector2(20, 181.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_no8kt"]
+size = Vector2(69, 92)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_pyn1s"]
+polygon = PackedVector2Array(-2549, 78, -2549, 74, 136, 73, 136, 79)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_no8kt"]
+polygon = PackedVector2Array(-2280, 437, -2280, 432, -285, 432, -283, 437)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_xbk3s"]
+polygon = PackedVector2Array(-144, 77, -144, 258, -139, 258, -139, 77)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_i4fjy"]
+polygon = PackedVector2Array(-2163, -102, -2163, -107, -103, -107, -103, -102)
 
 [node name="World" type="Node2D"]
 
@@ -177,6 +193,7 @@ position = Vector2(764, 0)
 position = Vector2(616, -1)
 
 [node name="Door4" parent="Doors" instance=ExtResource("4_8j60k")]
+position = Vector2(0, -1)
 
 [node name="Door5" parent="Doors" instance=ExtResource("4_8j60k")]
 position = Vector2(-698, 0)
@@ -234,6 +251,7 @@ texture = ExtResource("8_0fj1v")
 script = ExtResource("9_ikia7")
 
 [node name="BackgroundElements" type="Node2D" parent="."]
+visible = false
 position = Vector2(89, 95)
 scale = Vector2(74.2308, 12.5641)
 
@@ -503,29 +521,68 @@ position = Vector2(11, -2)
 [node name="EngineFunction" parent="." instance=ExtResource("15_kn0ld")]
 position = Vector2(-2182, 379)
 
+[node name="Monster" parent="." instance=ExtResource("19_axeuq")]
+z_index = 1
+position = Vector2(-407, -15)
+
 [node name="F4-Door" type="Sprite2D" parent="."]
 position = Vector2(-1872, 359)
 texture = ExtResource("19_1cojt")
 
-[node name="Monster" parent="." instance=ExtResource("19_axeuq")]
-z_index = 1
-position = Vector2(-1832, -196)
+[node name="Area2D" type="Area2D" parent="F4-Door"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="F4-Door/Area2D"]
+position = Vector2(0.5, 27)
+shape = SubResource("RectangleShape2D_no8kt")
 
 [node name="F3-Door" type="Sprite2D" parent="."]
 position = Vector2(-849, 181)
 texture = ExtResource("19_1cojt")
 
+[node name="Area2D" type="Area2D" parent="F3-Door"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="F3-Door/Area2D"]
+position = Vector2(0.5, 27)
+shape = SubResource("RectangleShape2D_no8kt")
+
 [node name="F2-Door" type="Sprite2D" parent="."]
 position = Vector2(-1162, 0)
 texture = ExtResource("19_1cojt")
+
+[node name="Area2D" type="Area2D" parent="F2-Door"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="F2-Door/Area2D"]
+position = Vector2(0.5, 27)
+shape = SubResource("RectangleShape2D_no8kt")
 
 [node name="F1-Door" type="Sprite2D" parent="."]
 position = Vector2(-833, -179)
 texture = ExtResource("19_1cojt")
 
+[node name="Area2D" type="Area2D" parent="F1-Door"]
+script = ExtResource("21_pyn1s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="F1-Door/Area2D"]
+position = Vector2(0.5, 27)
+shape = SubResource("RectangleShape2D_no8kt")
+
 [node name="Marker" type="Node2D" parent="."]
-position = Vector2(-2140, 383)
+position = Vector2(-797, -129)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("21_yq1aw")
 autoplay = true
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_pyn1s")
+
+[node name="LightOccluder2D3" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_no8kt")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="LightOccluder2D3"]
+occluder = SubResource("OccluderPolygon2D_xbk3s")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_i4fjy")
+
+[connection signal="body_entered" from="F1-Door/Area2D" to="F1-Door/Area2D" method="_on_body_entered"]

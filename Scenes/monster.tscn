@@ -221,8 +221,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5105l"]
-radius = 22.0
-height = 124.0
+radius = 18.0
+height = 40.0
 
 [node name="Monster" type="CharacterBody2D"]
 script = ExtResource("1_i44lo")
@@ -234,7 +234,7 @@ autoplay = "idle"
 frame_progress = 0.140396
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 30)
+position = Vector2(-1, 40)
 shape = SubResource("CapsuleShape2D_5105l")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
