@@ -27,3 +27,7 @@ func _on_timer_timeout() -> void:
 	if new_state:
 		change_state(new_state)
 	pass # Replace with function body.
+
+func goIdle() -> void:
+	
+	change_state($Idle)

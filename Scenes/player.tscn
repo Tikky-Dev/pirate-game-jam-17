@@ -376,5 +376,11 @@ scale = Vector2(0.085, 0.171306)
 shadow_enabled = true
 texture = ExtResource("5_fkybt")
 
+[node name="RayCast2D" type="RayCast2D" parent="ArmPosition/ArmPivot"]
+position = Vector2(16.4809, 1.54251)
+rotation = -1.5708
+target_position = Vector2(11.7501, 221.294)
+collision_mask = 4
+
 [node name="Step" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_3smsa")

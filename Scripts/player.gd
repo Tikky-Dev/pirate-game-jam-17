@@ -82,6 +82,16 @@ func _physics_process(delta: float) -> void:
 	
 
 func _input(event: InputEvent) -> void:
+	
+	if GlobalVar.using_lg:
+		if event.is_action_pressed("useTool"):
+			if GlobalVar.usedGun==false:
+				
+				if $ArmPosition/ArmPivot/RayCast2D.get_collider()!=null:
+					print($ArmPosition/ArmPivot/RayCast2D.get_collider())
+					if $ArmPosition/ArmPivot/RayCast2D.get_collider()==$"../Monster":
+						
+						$"../Monster".state_machine.goIdle()
 	if GlobalVar.has_tool == true:
 		if event.is_action_pressed("Interact"):
 			using_flashlight = false
