@@ -12,6 +12,7 @@ var using_pg := false
 
 var canMove=true
 
+var health=3
 
 func _physics_process(delta: float) -> void:
 	
@@ -113,3 +114,7 @@ func _input(event: InputEvent) -> void:
 			GlobalVar.using_lg = false
 			using_pg = false
 			$ArmPosition/ArmPivot/ArmSprite.frame = 0
+
+func Die() -> void:
+	$AnimatedSprite2D.play("Death")
+	canMove=false

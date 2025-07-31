@@ -206,7 +206,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_l6n3p")
 }],
-"loop": true,
+"loop": false,
 "name": &"Death",
 "speed": 5.0
 }, {
@@ -344,8 +344,7 @@ script = ExtResource("1_cvnsp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_tx1dd")
-animation = &"Idle"
-autoplay = "Idle"
+animation = &"Death"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false
